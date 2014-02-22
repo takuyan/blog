@@ -1,3 +1,6 @@
+require 'dotenv'
+Dotenv.load
+
 ###
 # Blog settings
 ###
@@ -32,6 +35,24 @@ end
 page "/feed.xml", layout: false
 
 page '/about'
+
+###
+# AWS S3 Setting
+###
+
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket                     = 'blog.takuyan.com'
+  s3_sync.region                     = 'ap-northeast-1'
+  s3_sync.aws_access_key_id          = ENV['S3_ACCESS']
+  s3_sync.aws_secret_access_key      = ENV['S3_SECRET']
+  #s3_sync.delete                     = false
+  #s3_sync.after_build                = false
+  s3_sync.prefer_gzip                = true
+  s3_sync.path_style                 = true
+  s3_sync.reduced_redundancy_storage = false
+  s3_sync.acl                        = 'public-read'
+  s3_sync.encryption                 = false
+end
 
 ###
 # Compass
