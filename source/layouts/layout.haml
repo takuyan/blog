@@ -1,0 +1,21 @@
+!!!
+%html{lang: :ja}
+  %head
+    = partial 'layouts/head'
+  %body
+    = partial 'layouts/header'
+
+    #main{role: "main"}
+      .logo_area
+        .container
+          %h1
+            - if content_for?(:header)
+              = yield_content :header
+            - else
+              blog.takuyan.com
+      .container
+        .row
+          .col-md-8.col-md-offset-2
+            = yield
+
+    = partial 'layouts/footer'

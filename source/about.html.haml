@@ -1,0 +1,48 @@
+- content_for :header do
+  About Me
+
+.row
+  .col-md-4
+    = tag :img, src: '/images/image.jpg', class: 'img-circle img-responsive'
+  .col-md-8
+    .about_me
+      %h2
+        Takuya Kato
+
+      %p
+        新しいことと、仕組み作りが大好きです。
+        %br
+        じぶんの欲しいサービスを作るためにプログラムを書いています。
+      %p
+        ゼロからサービスを作ることが得意です。
+        %br
+        そのためサーバ管理からデザイン、プログラムをひと通り嗜んでいます。
+        %br
+        継続してメンテナンスするために自動テストを書いています。
+      %p
+        "同じアイディアを持つひとが１００人、実際に作るひとが１０人、続けていけるひとが１人"という言葉が好きです。
+        %br
+        アイディアはそれだけではあまり価値は無く、作ってこそ価値があるものだと考えています。
+
+      %h2
+        Project
+
+      %ul.list
+        %li
+          %a{href: "http://proofoflife.me", target: :_blank}
+            生存証明 - Proof of Life
+        %li
+          %a{href: "http://printer.takuyan.com", target: :_blank}
+            Good Char View
+        %li
+          %a{href: "http://gsuggest.herokuapp.com/", target: :_blank}
+            Google Suggest API もどき
+        %li.comming-soon
+          %a{href: "http://guildrive.com", target: :_blank}
+            Guildrive.com - Comming Soon
+        %li.comming-soon
+          %a{href: "http://refor.me", target: :_blank}
+            Refor.me - Comming Soon
+        %li
+          %a{href: "http://gamebook.takuyan.com", target: :_blank}
+            ゲームブック - Gamebook

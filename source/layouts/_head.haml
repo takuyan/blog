@@ -1,0 +1,12 @@
+%meta{charset: 'utf-8'}
+%meta{'http-equiv' => 'X-UA-Compatible',  content: 'IE=edge;chrome=1'}
+%meta{"http-equiv" => "content-language", content: "ja"}
+%meta{content: "width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no", name: "viewport"}
+%meta{content: "telephone=no", name: "format-detection"}
+%meta{content: "yes", name: "apple-mobile-web-app-capable"}
+%meta{name: :author, content: "Takuya Kato"}
+%meta{name: :copyright, content: "Takuya Kato"}
+%title
+  #{current_article.title + ' - ' unless current_article.nil?}blog.takuyan.com
+= stylesheet_link_tag 'application'
+%link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", rel: "stylesheet"}

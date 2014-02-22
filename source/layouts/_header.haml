@@ -1,0 +1,24 @@
+%nav.navbar.navbar-default.navbar-fixed-top{role: :banner}
+  .container
+    .navbar-header
+      %button.navbar-toggle{type: :button, data: {toggle: "collapse", target: ".bs-navbar-collapse"}}
+        %span.sr-only Toggle navigation
+        %span.fa.fa-th-large
+      %a.navbar-brand{href: '/'}
+        %i.fa.fa-home
+        blog.takuyan.com
+
+    .collapse.navbar-collapse.bs-navbar-collapse{role: :navigation}
+      %ul.nav.navbar-nav.pull-right
+        %li
+          = link_to '/about' do
+            %i.fa.fa-user
+        %li
+          = link_to 'https://twitter.com/katton', target: :_blank do
+            %i.fa.fa-twitter
+        %li
+          = link_to 'https://github.com/takuyan', target: :_blank do
+            %i.fa.fa-github
+        %li
+          = link_to 'https://www.facebook.com/takuyank', target: :_blank do
+            %i.fa.fa-facebook

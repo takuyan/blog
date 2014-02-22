@@ -1,0 +1,29 @@
+!!!
+%html{lang: :ja}
+  %head
+    = partial 'layouts/head'
+  %body
+    = partial 'layouts/header'
+    #main{role: "main"}
+      .container
+        %ul.breadcrumb
+          %li
+            = link_to 'TOP', '/'
+          %li
+            = link_to current_page.title, current_page
+        .row
+          .col-md-8
+            %article
+              .page_title
+                %h1
+                  = current_page.title
+                .help-block
+                  %span.label.label-default
+                    = current_page.date.strftime('%Y-%m-%d')
+              .article_body
+                = yield
+          .col-md-4
+
+
+    = partial 'layouts/footer'
+
