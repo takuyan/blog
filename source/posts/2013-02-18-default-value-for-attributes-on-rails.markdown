@@ -7,11 +7,13 @@ categories: [ruby, rails]
 
 ## 初期値の設定
 
-皆さんは「初期データ」ってどのように設定していますか。
+皆さんは「初期データ」ってどのように設定していますか。  
 「初期値って、そりゃDB側に設定するでしょう」という声も聞こえてきますが「親レコードの指定された値」だとか、更にそれを計算した値、となるとDB側で対応するのが正解とは言い難くなってきます。
 
 そこで、私はよく`before_filter :set_default`などと書いていました。
 しかし、最近にしてやっと`default_value_for`というGemがあることを知りまして目鱗しております。
+
+READMORE
 
 [FooBarWidget / default_value_for](https://github.com/FooBarWidget/default_value_for)
 

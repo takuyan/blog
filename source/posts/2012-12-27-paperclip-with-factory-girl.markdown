@@ -11,6 +11,8 @@ categories: [rails, ruby, paperclip, factory_girl]
 
 言わずもがな、[Paperclip](https://github.com/thoughtbot/paperclip)は、ファイルをアップロードするためのgemです。
 
+READMORE
+
 ``` ruby
 # app/models/user.rb
 class User < ActiveRecord::Base

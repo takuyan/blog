@@ -10,15 +10,17 @@ categories: [rails, mac]
 
 所要時間は、光回線で、3時間くらい。
 
-# 必須作業編
+READMORE
 
-## Mountain Lion インストール
+## 必須作業編
+
+### Mountain Lion インストール
 
 通常通り、Mac App Store で購入してダウンロード・インストール。
 
 [Mountain Lion](http://itunes.apple.com/jp/app/os-x-mountain-lion/id537386512?ls=1&mt=12)
 
-## Xcode インストール
+### Xcode インストール
 
 こちらも通常通り、Mac App Store で購入してダウンロード・インストール。
 
@@ -32,7 +34,7 @@ categories: [rails, mac]
 - iOS 5.0 Simulator
 - Command Line Tools
 
-## Homebrew インストール
+### Homebrew インストール
 
     $ brew install zsh git sqlite mysql postgresql redis imagemagick qt
 
@@ -45,12 +47,12 @@ categories: [rails, mac]
 - imagemagick
 - qt
 
-## Growl
+### Growl
 
 [Growl](http://growl.info/)
 
 
-### Growl Notify
+#### Growl Notify
 
 [Growl - Download ページの右下の方](http://growl.info/downloads)
 

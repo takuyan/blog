@@ -5,7 +5,7 @@ comments: true
 categories: [project, rails]
 ---
 
-{% img /images/2012/hyakkaryouran.png %}
+<img src='/images/2012/hyakkaryouran.png' class='img-rounded' />
 
 ## [printer.takuyan.com](http://printer.takuyan.com)
 
@@ -25,23 +25,23 @@ categories: [project, rails]
 
 ### 百花繚乱
 
-{% img /images/2012/hyakkaryouran.png %}
+<img src='/images/2012/hyakkaryouran.png' class="img-rounded" />
 
 ### 春夏秋冬
 
-{% img /images/2012/syunkasyuutou.png %}
+<img src='/images/2012/syunkasyuutou.png' class="img-rounded" />
 
 ### 魑魅魍魎
 
-{% img /images/2012/chimimouryou.png %}
+<img src='/images/2012/chimimouryou.png' class="img-rounded" />
 
 ### 臥薪嘗胆
 
-{% img /images/2012/gashinsyoutan.png %}
+<img src='/images/2012/gashinsyoutan.png' class="img-rounded" />
 
 ### 犬も歩けば棒に当たる
 
-{% img /images/2012/inumoarukeba.png %}
+<img src='/images/2012/inumoarukeba.png' class="img-rounded" />
 
 ## これでゲームとかできそう
 

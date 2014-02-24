@@ -5,7 +5,7 @@ comments: true
 categories: mac
 ---
 
-{% img /images/2012/PodcastPublisher.png %}
+<img src='/images/2012/PodcastPublisher.png' class="img-rounded img-responsive" />
 
 from [www.haxconnect24.com](http://www.haxconnect24.com/HaxConnect24/The_Hax_Cast/The_Hax_Cast.html)
 
@@ -19,7 +19,7 @@ Mountain Lion にバージョンアップしたあと開いていなかったが
 
 ## 結論から書く
 
-{% img /images/2012/podcastheader-670x525.png %}
+<img src='/images/2012/podcastheader-670x525.png' class="img-rounded img-responsive" />
 
 from [9to5mac.com](http://9to5mac.com/2011/02/26/podcast-publisher-lets-your-run-your-own-shows-debuts-in-10-7-lion/)
 

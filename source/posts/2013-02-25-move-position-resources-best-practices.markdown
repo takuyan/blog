@@ -11,6 +11,8 @@ categories: [ruby, rails, design]
 
 以下の様なリソースがあった場合、どのようなURL/コントローラで`move_higher`や`move_to_bottom`メソッドを叩くのか、というお題。
 
+READMORE
+
 ``` ruby
 
 #from_README_Example.rb

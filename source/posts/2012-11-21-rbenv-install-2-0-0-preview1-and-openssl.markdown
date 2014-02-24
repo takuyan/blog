@@ -4,6 +4,7 @@ date: 2012-11-21 20:03
 comments: true
 categories: [ruby, rbenv]
 ---
+
 `rbenv install 2.0.0-preview1`はうまくいくものの、`bundle install`で`openssl`のエラーが出ました。
 
 [sstephenson/ruby-build](https://github.com/sstephenson/ruby-build) のIssuesに答えがあったのでメモ。

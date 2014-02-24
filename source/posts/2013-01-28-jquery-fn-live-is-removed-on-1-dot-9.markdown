@@ -5,16 +5,17 @@ comments: true
 categories: [javascript, jquery]
 ---
 
-{% img /images/2013/jquery-1-dot-9-upgrade.png %}
+<img src='/images/2013/jquery-1-dot-9-upgrade.png' class='img-thumbnail' />
 
 **2013年 ■□□□□□□□□□□□ 9% Done**
 
-2013年の1/12(じゅうにぶんのいち)が早々に終わろうとしていますが、皆様、いかがお過ごしでしょうか。
+2013年の1/12(じゅうにぶんのいち)が早々に終わろうとしていますが、皆様、いかがお過ごしでしょうか。  
 先日、**Railsで呼び出されるjqueryのバージョンが1.9になり、`live`関数まわりが大挙してエラーを吐いて** おります。
 
-至急コイツをどげんかする必要があります。
-
+至急コイツをどげんかする必要があります。  
 ステップ・バイ・ステップで直そうと思います。
+
+READMORE
 
 ## 方針
 

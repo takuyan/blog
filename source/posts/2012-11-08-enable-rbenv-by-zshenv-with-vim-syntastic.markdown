@@ -10,7 +10,8 @@ categories: [vim, rbenv, ruby]
 
 [Syntastic](https://github.com/scrooloose/syntastic) という優れものを昨日、知りました。
 
-{% img /images/2012/syntastic_screenshot.png %}
+<img src='/images/2012/syntastic_screenshot.png' class="img-rounded img-responsive" />
+
 > Image from Github [scrooloose/syntastic](https://github.com/scrooloose/syntastic)
 
 いわゆる構文チェッカーです。デフォルトでは保存時にチェックをしてくれるようです。Vimなのに、もう殆どIDEですね。
@@ -21,7 +22,7 @@ categories: [vim, rbenv, ruby]
 
 ### 構文エラーじゃないのに！
 
-{% img /images/2012/invalid_syntax.png %}
+<img src='/images/2012/invalid_syntax.png' class="img-rounded" />
 
 あ、もしかして、1.9 styleのHashで怒られてる？
 
@@ -41,7 +42,7 @@ fi
 > Zsh note: Modify your ~/.zshenv file instead of ~/.bash_profile.
 > [sstephenson/rbenv](https://github.com/sstephenson/rbenv#section_2.1)
 
-{% img /images/2012/valid_syntax.png %}
+<img src='/images/2012/valid_syntax.png' class="img-rounded" />
 
 ちゃんと通ったみたい。めでたしめでたし。
 

@@ -7,6 +7,8 @@ categories: rails
 DeviseといえばRailsにおける[代表的な認証ライブラリ](https://www.ruby-toolbox.com/categories/rails_authentication)です。
 バージョンアップに伴いログアウト部分に修正が必要になりました。
 
+READMORE
+
 ## 修正前はこんなエラーが発生
 
 ``` ruby

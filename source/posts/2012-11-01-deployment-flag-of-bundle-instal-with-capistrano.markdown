@@ -8,6 +8,8 @@ categories: [rails, ruby]
 Railsで開発していて、デプロイはcapistranoを使い、本番環境でrbenvを使ってる皆様こんにちは。
 そのような皆様の`config/deploy.rb` に以下のような記述があると思います。
 
+READMORE
+
 ```  ruby
 require "bundler/capistrano"
 set :default_environment, {

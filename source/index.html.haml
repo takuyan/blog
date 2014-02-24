@@ -3,13 +3,6 @@ pageable: true
 per_page: 10
 ---
 
-- if paginate && num_pages > 1
-  %p Page #{page_number} of #{num_pages}
-
-  - if prev_page
-    %p
-      = link_to 'Previous page', prev_page
-
 .articles
   - page_articles.each_with_index do |article, i|
     .article_info
@@ -23,7 +16,16 @@ per_page: 10
       .article_body
         = article.summary
 
-- if paginate
-  - if next_page
-    %p
-      = link_to 'Next page', next_page
+- if paginate && num_pages > 1
+  %ul.pager
+    - if prev_page
+      %li.previous
+        = link_to prev_page do
+          %i.fa.fa-chevron-left
+          Prev
+
+    - if next_page
+      %li.next
+        = link_to next_page do
+          %i.fa.fa-chevron-right
+          Next

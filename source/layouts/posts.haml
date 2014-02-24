@@ -22,8 +22,14 @@
                     = current_page.date.strftime('%Y-%m-%d')
               .article_body
                 = yield
-          .col-md-4
-
+          .col-md-4.side
+            %h3
+              Recent Article
+            %ul.recent_articles.list-unstyled
+              - blog.articles[0..30].each do |a|
+                %li
+                  %h4
+                    = link_to a.title, a
 
     = partial 'layouts/footer'
 

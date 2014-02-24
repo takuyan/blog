@@ -7,11 +7,13 @@ categories: [rails, diary, project]
 
 ※総括は [とあるRailsエンジニアの2012年](/blog/2013/01/09/summary-of-2012) を参照くださいませ。
 
-### [かきスタ](http://kakista.jp)
+READMORE 
 
-{% img /images/2013/kakista2012.png %}
+### かきスタ
 
-{% pullquote %}
+[かきスタ](http://kakista.jp)
+
+<img src='/images/2013/kakista2012.png' class='img-thumbnail' />
 
 本業で中核事業。元々はDemandMediaモデルの実践。DemandStudioとeHow的な。
 だったのだけど、量と質の担保にとてもパワーが必要。2011年末から結構空転していた。
@@ -22,11 +24,12 @@ categories: [rails, diary, project]
 なお、技術的負債は２０１３年１月で解消出来る見込み。
 
 キビッツやらアプリを作っていたので２０１２年は２ヶ月程度しか開発していない気がする。
-{% endpullquote %}
 
-### [方法諸説](http://houhou.info)
+### 方法諸説
 
-{% img /images/2013/houhou2012.png %}
+[方法諸説](http://houhou.info)
+
+<img src='/images/2013/houhou2012.png' class='img-rounded' />
 
 本業。継続案件。
 

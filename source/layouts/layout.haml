@@ -12,7 +12,8 @@
             - if content_for?(:header)
               = yield_content :header
             - else
-              blog.takuyan.com
+              = link_to '/' do
+                blog.takuyan.com
       .container
         .row
           .col-md-8.col-md-offset-2

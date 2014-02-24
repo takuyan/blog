@@ -12,6 +12,8 @@ categories: rails
 
 今回はOAuthまわりでハマったのでメモ。
 
+READMORE
+
 ## やりかた
 
 * Omniauth で GoogleにOAuth2

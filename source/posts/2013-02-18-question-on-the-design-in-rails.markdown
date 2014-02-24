@@ -5,7 +5,7 @@ comments: true
 categories: [ruby, rails, design]
 ---
 
-{% img /images/2013/rails_way.jpg %}
+<img src='/images/2013/rails_way.jpg' class='img-thumbnail' />
 
 **複数の出版社の本を管理するシステムがあり、単純に本の一覧データを閲覧したい**、という場合について考えます。
 
@@ -13,6 +13,8 @@ categories: [ruby, rails, design]
 
 - パターン１：ひとつのコントローラですべてのビューに対応する
 - パターン２：ビューごとにコントローラを作る
+
+READMORE
 
 ### 前提条件
 

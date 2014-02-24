@@ -12,7 +12,7 @@ categories: [project, rails]
 
 ## [Proof of Life](http://proofoflife.me)
 
-{% img /images/2012/proofoflife.png %}
+<img src='/images/2012/proofoflife.png' class="img-rounded" />
 
 ## サービス概要
 

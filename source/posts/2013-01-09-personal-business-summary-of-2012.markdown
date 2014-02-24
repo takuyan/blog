@@ -7,20 +7,24 @@ categories: [diary, rails, project]
 
 ※総括は [とあるRailsエンジニアの2012年](/blog/2013/01/09/summary-of-2012) を参照くださいませ。
 
-### [Gamebook Maker](http://gamebook.takuyan.com)
+READMORE
 
-{% img /images/2013/gamebookmaker.png %}
+### Gamebook Maker
 
-{% pullquote %}
+[Gamebook Maker](http://gamebook.takuyan.com)
+
+<img src='/images/2013/gamebookmaker.png' class='img-thumbnail' />
+
 ゲームブックって知ってますか。自分の選択次第で物語が変わっていく本ですね。
 
-「選択の科学」という本に触発されて作りました。
-現在は、フラグ管理など、 {" シナリオの品質と手軽さのバランスを取ることができず、休眠中 "} です。
-{% endpullquote %}
+「選択の科学」という本に触発されて作りました。  
+現在は、フラグ管理など、 **シナリオの品質と手軽さのバランスを取ることができず、休眠中**です。
 
-### [Google Suggest Hack](http://gsuggest.herokuapp.com)
+### Google Suggest Hack
 
-{% img /images/2013/gsuggest.png %}
+[Google Suggest Hack](http://gsuggest.herokuapp.com)
+
+<img src='/images/2013/gsuggest.png' class='img-thumbnail' />
 
 かきスタという本業があり、そこではライターさんに役に立つ記事を書いてもらっています。
 しかし「役に立つ」の定義って意外と難しいのですね。

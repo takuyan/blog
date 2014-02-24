@@ -4,7 +4,7 @@ date: 2012-09-28 20:00
 categories: mac
 ---
 
-{% img http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Smart_Engine.JPG/800px-Smart_Engine.JPG?uselang=ja %}
+<img src='http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Smart_Engine.JPG/800px-Smart_Engine.JPG?uselang=ja' class="img-rounded img-responsive" />
 
 Mountain Lionにアップデートするべく作業中、「S.M.A.R.T.エラーが発生しているのでこのHDDにはインストール出来ない」旨、怒られました。
 S.M.A.R.T.エラー？なにそれ？

@@ -3,7 +3,7 @@
 
 .row
   .col-md-4
-    = tag :img, src: '/images/image.jpg', class: 'img-circle img-responsive'
+    = tag :img, src: '/images/portfolio/image.jpg', class: 'img-circle img-responsive'
   .col-md-8
     .about_me
       %h2
@@ -25,24 +25,56 @@
         アイディアはそれだけではあまり価値は無く、作ってこそ価値があるものだと考えています。
 
       %h2
-        Project
+        Personal Projects
 
-      %ul.list
-        %li
+      .project
+        %a{href: "http://proofoflife.me", target: :_blank}
+          = tag :img, src: '/images/portfolio/proofoflife.png', class: 'img-rounded'
+        %h3
           %a{href: "http://proofoflife.me", target: :_blank}
             生存証明 - Proof of Life
-        %li
-          %a{href: "http://printer.takuyan.com", target: :_blank}
-            Good Char View
-        %li
-          %a{href: "http://gsuggest.herokuapp.com/", target: :_blank}
-            Google Suggest API もどき
-        %li.comming-soon
-          %a{href: "http://guildrive.com", target: :_blank}
-            Guildrive.com - Comming Soon
-        %li.comming-soon
-          %a{href: "http://refor.me", target: :_blank}
-            Refor.me - Comming Soon
-        %li
+
+        .article_body
+          %p
+            %strong
+              死ぬときに後悔しないために
+            というコンセプトで運営しているサービスです。
+            %br
+              遺された大切なひとにメッセージを届けることができます。
+          %p
+            色々なメディアで紹介され、日本以外のユーザが多数登録されています。
+
+          .show_detail
+            %a{href: "http://proofoflife.me", target: :_blank}
+              詳しく見る
+
+      .project
+        %a{href: "http://gamebook.takuyan.com", target: :_blank}
+          = tag :img, src: '/images/portfolio/gamebook.png', class: 'img-thumbnail'
+        %h3
           %a{href: "http://gamebook.takuyan.com", target: :_blank}
             ゲームブック - Gamebook
+
+      .project
+        %h3.comming-soon
+          %a{href: "http://guildrive.com", target: :_blank}
+            Guildrive.com - Comming Soon
+      .project
+        %h3.comming-soon
+          %a{href: "http://refor.me", target: :_blank}
+            Refor.me - Comming Soon
+
+      %h2
+        Tools
+
+      .tool
+        %a{href: "http://printer.takuyan.com", target: :_blank}
+          = tag :img, src: '/images/portfolio/goodcharview.png', class: 'img-thumbnail'
+        %h3
+          %a{href: "http://printer.takuyan.com", target: :_blank}
+            Good Char View
+
+      .tool
+        %h3
+          %a{href: "http://gsuggest.herokuapp.com/", target: :_blank}
+            Google Suggest API もどき

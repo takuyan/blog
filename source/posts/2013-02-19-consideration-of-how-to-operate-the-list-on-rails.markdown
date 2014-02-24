@@ -7,8 +7,7 @@ categories: [ruby, rails, design]
 
 **UPDATE:** [続きを書きました](/blog/2013/02/25/move-position-resources-best-practices/)
 
----
-
+READMORE
 
 [swanandp / acts_as_list - Github](https://github.com/swanandp/acts_as_list)
 
