@@ -37,7 +37,8 @@ READMORE
 
 で、私はGoogleAnalyticsやりたかったので`scope`を以下のように設定してました。これがまずかった。
 
-``` ruby invalid_omniauth.rb
+``` ruby
+#invalid_omniauth.rb
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, 'your_cliant_id', 'your_client_secret',
     {
@@ -76,8 +77,8 @@ end
 ちゃんと[README](https://github.com/zquestz/omniauth-google-oauth2)に書いてあるんですが、これまた見落としてました。
 `userinfo.email`と`userinfo.profile`は追加しましょうね。
 
-``` ruby valid_omniauth.rb
-
+``` ruby
+#valid_omniauth.rb
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, 'your_cliant_id', 'your_client_secret',
     {
@@ -109,7 +110,8 @@ end
 さて、この`approval_prompt: auto + access_type: offline`という組み合わせを使うと`refresh_token`が発行されないようです。
 まあ確かに「一度認証されたのだから無期限にユーザのあずかり知らぬ所でアクセス可能としろ」というわけなので、そこまでの乱暴ぶりは許さないということでしょうか。
 
-``` ruby valid_omniauth.rb
+``` ruby
+#valid_omniauth.rb
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, 'your_cliant_id', 'your_client_secret',
     {
