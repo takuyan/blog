@@ -35,6 +35,7 @@ end
 page "/feed.xml", layout: false
 
 page '/about'
+page '/error.html', directory_index: false
 
 ###
 # AWS S3 Setting
