@@ -189,6 +189,7 @@ body
         line-height: 1.6em
         a
           color: #ccb
+          transition: color 0.4s linear 0 
     &:hover
       a
         color: $link-color
@@ -252,6 +253,13 @@ article
 .about_me > h2
   margin: 0 0 20px
   padding: 0
+
+.not_found
+  .pager
+    .next
+      a
+        background-color: $green
+        color: white
 
 #footer
   height: 70px

@@ -7,6 +7,9 @@
 %meta{name: :author, content: "Takuya Kato"}
 %meta{name: :copyright, content: "Takuya Kato"}
 %title
-  #{current_article.title + ' - ' unless current_article.nil?}blog.takuyan.com
+  - if content_for?(:title)
+    #{yield_content(:title)} - blog.takuyan.com
+  - else
+    #{current_article.title + ' - ' unless current_article.nil?}blog.takuyan.com
 = stylesheet_link_tag 'application'
 %link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", rel: "stylesheet"}

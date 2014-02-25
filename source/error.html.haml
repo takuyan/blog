@@ -1,3 +1,6 @@
+- content_for :title do 
+  404 Page Not Found
+
 - content_for :header do
   404 Page Not Found
   %small
@@ -13,13 +16,18 @@
             トップページへ戻る
 
         %li.next#suggest
+          = link_to '/' do
+            記事はこちらから
+            %i.fa.fa-chevron-right
 
 - content_for :js do
+  - # 古いURLへアクセスしたユーザへの導線
   :javascript
     var url = document.location.pathname;
     if(url.match('blog')){
       var newUrl = url.replace('/blog/', '/posts/');
-      $('#suggest').html("<a href='" + newUrl + "'><i class='fa fa-chevron-right' />もしかして</a>");
+      $('#suggest').html("<a href='" + newUrl + "'>記事はこちらから <i class='fa fa-chevron-right' /></a>");
+      $('.logo_area h1').html('URLが変わりました');
     }else{
       $('#suggest').remove();
     }
