@@ -1,10 +1,7 @@
 @import colors
 @import bourbon
 @import media-queries
-
-//@import url(http://fonts.googleapis.com/css?family=Life+Savers)
 @import url(http://fonts.googleapis.com/css?family=Tinos|Milonga)
-//@import url(http://fonts.googleapis.com/css?family=Inconsolata)
 
 // Write Custom Bootstrap Styles
 
@@ -54,16 +51,10 @@ $pre-scrollable-max-height: none
     padding: 6px 10px
   .navbar-brand
     font:
-      //family: 'Inconsolata'
       family: 'Tinos', serif
-      //family: 'Milonga', cursive
-      //family: 'Life Savers', cursive
-    //letter-spacing: 0.2em
   ul.nav li a
     font:
-      //family: 'Inconsolata'
       family: 'Tinos', serif
-      //family: 'Life Savers', cursive
 
 .img-thumbnail
   background:
@@ -78,20 +69,24 @@ body
   margin: 0 0 40px
   padding: 60px 0
   text-align: center
-  //background-color: lighten($base_color, 10%)
   h1
     margin: 0
     padding: 0
     color: $base02
     font:
       size: 400%
-      //family: 'Inconsolata'
       family: 'Tinos', serif
     a
       color: $text-color
       &:hover
         color: $green
         text-decoration: none
+    small
+      display: block
+      margin: 20px 0 
+      padding: 0 
+      font:
+        size: 16px
 
 @include max-screen(320px)
   .logo_area
@@ -260,7 +255,3 @@ article
 
 #footer
   height: 70px
-  //background:
-    //color: $base3
-    //image: url(/images/ps_neutral_@2X.png)
-    //repeat: repeat

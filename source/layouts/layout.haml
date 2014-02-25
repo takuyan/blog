@@ -20,3 +20,6 @@
             = yield
 
     = partial 'layouts/footer'
+
+    - if content_for?(:js)
+      = yield_content :js

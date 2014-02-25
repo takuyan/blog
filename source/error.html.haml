@@ -1,0 +1,31 @@
+- content_for :header do
+  404 Page Not Found
+  %small
+    ページがみつかりません
+
+.row
+  .col-md-8.col-md-offset-2
+    .not_found
+      .goto_index
+        %p
+          = link_to '/' do
+            %i.fa.fa-chevron-left
+            トップページへ戻る
+
+      #suggest
+        %p
+          もしかして
+          %span#suggest_url
+
+- content_for :js do
+  :javascript
+    var url = document.location.pathname;
+
+    if(url.match('blog')){
+      var newUrl;
+      newUrl = url.replace('/blog/', '/posts/');
+      $('#suggest_url').html("<a href='" + newUrl + "' class='btn btn-link'>こちら</a>");
+    }else{
+      $('#suggest').remove();
+    }
+
