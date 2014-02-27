@@ -8,7 +8,7 @@ per_page: 10
     .article_info
       .article_title
         %h2
-          = link_to article.title, article
+          = link_to article.title, article, tabindex: (i + 1)
       .help-block
         - article.tags.each do |t|
           = link_to t, tag_path(t), class: 'label label-default'
