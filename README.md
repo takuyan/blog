@@ -4,7 +4,7 @@
 
 ## Request
 
-書いて欲しいネタがあれば[こちら](https://github.com/takuyan/blog/issues)からリクエストしてください。  
+書いて欲しいネタがあれば[こちら](https://github.com/takuyan/blog/issues/new)からリクエストしてください。  
 書くかもしれません。
 
 ## Copyright
