@@ -9,6 +9,7 @@ gem "dotenv"
 gem "nokogiri"
 gem 'bourbon', require: false
 gem "redcarpet"
+gem "sanitize"
 gem "middleman-syntax"
 gem "coffee-script"
 gem "bootstrap-sass", require: false

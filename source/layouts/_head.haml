@@ -1,4 +1,12 @@
 %meta{charset: 'utf-8'}
+%title
+  - if content_for?(:title)
+    #{yield_content(:title)} - blog.takuyan.com
+  - else
+    #{current_article.title + ' - ' unless current_article.nil?}blog.takuyan.com
+- if current_article
+  %meta{content: current_article.tags.join(","), name: "keyword"}
+  %meta{content: Sanitize.clean(current_article.summary), name: "description"}
 %meta{'http-equiv' => 'X-UA-Compatible',  content: 'IE=edge;chrome=1'}
 %meta{"http-equiv" => "content-language", content: "ja"}
 %meta{content: "width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no", name: "viewport"}
@@ -6,10 +14,7 @@
 %meta{content: "yes", name: "apple-mobile-web-app-capable"}
 %meta{name: :author, content: "Takuya Kato"}
 %meta{name: :copyright, content: "Takuya Kato"}
-%title
-  - if content_for?(:title)
-    #{yield_content(:title)} - blog.takuyan.com
-  - else
-    #{current_article.title + ' - ' unless current_article.nil?}blog.takuyan.com
+%meta{property: "og:site_name", content: 'blog.takuyan.com'}
+%meta{property: "og:locale", content: "ja_JP"}
 = stylesheet_link_tag 'application'
 %link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", rel: "stylesheet"}
