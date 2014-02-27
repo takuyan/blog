@@ -1,11 +1,12 @@
 @import colors
 @import bourbon
 @import media-queries
-@import url(http://fonts.googleapis.com/css?family=Tinos|Inconsolata)
+@import url(http://fonts.googleapis.com/css?family=Cutive+Mono|Tinos|Inconsolata)
 
 // Write Custom Bootstrap Styles
 
-$font-family-sans-serif: "Lucida Grande", "Lucida Sans Unicode", 'Hiragino Kaku Gothic Pro','Meiryo UI', Verdana, sans-serif
+//$font-family-sans-serif:  "Lucida Grande", "Lucida Sans Unicode", 'Hiragino Kaku Gothic Pro','Meiryo UI', Verdana, sans-serif
+$font-family-sans-serif:  'Lucida Grande', Arial, 'Hiragino Kaku Gothic Pro', Meiryo, 'Meiryo UI', 'メイリオ', sans-serif
 
 $link-color: $pp_blue
 $text-color: $main_color
@@ -61,7 +62,7 @@ pre.highlight
   .navbar-brand
     font:
       family: 'Tinos', serif
-  ul.nav li a
+  //ul.nav li a
     font:
       family: 'Tinos', serif
 
@@ -196,6 +197,8 @@ body
     font:
       size: 140%
       weight: normal
+      family: 'Cutive Mono', serif
+
   .recent_articles, .side_tags
     margin: 0 0 40px
     li
@@ -216,6 +219,9 @@ body
         color: $link-color
         &:hover
           color: $green
+  .side_tags li h4
+    font:
+      family: 'Cutive Mono', serif
 
 article
   margin: 0 0 40px
@@ -292,6 +298,8 @@ article
     padding: 30px 0 
     line-height: 2em
     color: #ddd
+    font:
+      family: 'Tinos', serif
     a
       color: #ddd
       &:hover

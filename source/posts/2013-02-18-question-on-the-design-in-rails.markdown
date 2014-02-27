@@ -40,7 +40,8 @@ URLを同一( /books )のまま、表示をログインユーザごとに分け�
 `Books#index`を使いまわして、権限ごとに表示項目を変更します。
 なので、view側で「削除ボタン」の表示判断をやります。
 
-``` ruby books_controller.rb
+``` ruby 
+#books_controller.rb
 # GET books#index
 def index
   if current_user.is_admin?
@@ -54,7 +55,8 @@ def index
 end
 ```
 
-``` haml index.html.haml
+``` haml 
+- #index.html.haml
 %table.table
   %thead
     %tr
@@ -97,7 +99,7 @@ URLで見れるものを分類するやりかた。
 
 そんなわけで、`routing_spec`から。
 
-``` ruby routing_specs.rb
+``` ruby 
 # spec/routing/books_routing_spec.rb
 require "spec_helper"
 
@@ -133,7 +135,9 @@ end
 ```
 
 ルーティングは以下のような感じで。
-``` ruby routes.rb
+
+``` ruby 
+# routes.rb
 Publisher::Application.routes.draw do
   resources :books
   resources :publishers do
@@ -146,8 +150,9 @@ end
 ```
 
 コントローラのspecを書きます。
-``` ruby controller_specs.rb
-# coding: utf-8
+
+``` ruby 
+#controller_specs.rb
 require 'spec_helper'
 
 describe BooksController do
@@ -185,7 +190,8 @@ end
 ```
 
 で、コントローラです。
-``` ruby controllers.rb
+
+``` ruby
 # app/controllers/books_controller.rb
 class BooksController < ApplicationController
   def index
@@ -212,6 +218,7 @@ end
 ```
 
 Viewはそれぞれ以下のように配置しました。
+
 ``` sh
 mkdir -p app/views/books
 touch app/views/books/index.html.haml
@@ -228,7 +235,8 @@ touch app/views/admin/books/index.html.haml
 これは、パターン１に比べると拡張が楽なんですね。
 例えば、**ユーザごとの本一覧が見たい**とかなったときでも直ぐに追加できますからね。
 
-``` ruby routes.rb
+``` ruby 
+# routes.rb
 Publisher::Application.routes.draw do
   resources :books
   resources :publishers do
