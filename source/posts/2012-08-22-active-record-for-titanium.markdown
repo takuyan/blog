@@ -1,7 +1,7 @@
 ---
 title: "ActiveRecord for Titanium"
 date: 2012-08-22 22:39
-categories: titanium
+tags: titanium
 ---
 
 最近はTitaniumでiPhoneとかAndroidのアプリを作っています。

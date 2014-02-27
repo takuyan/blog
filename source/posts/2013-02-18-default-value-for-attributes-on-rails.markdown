@@ -2,7 +2,7 @@
 title: "Railsの項目ごとの初期値はdefault_value_forが良さそう"
 date: 2013-02-18 13:00
 comments: true
-categories: [ruby, rails]
+tags: [ruby, rails]
 ---
 
 ## 初期値の設定

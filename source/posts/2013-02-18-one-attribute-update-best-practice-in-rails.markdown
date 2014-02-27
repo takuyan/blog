@@ -2,7 +2,7 @@
 title: "単一項目のみを更新するRailsパターンを探る"
 date: 2013-02-18 22:12
 comments: true
-categories: [ruby, rails]
+tags: [ruby, rails]
 ---
 
 フラグの変更や、順序の変更など、項目をひとつだけ更新したいようなアクションは多いと思います。

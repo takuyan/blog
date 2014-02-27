@@ -2,7 +2,7 @@
 title: "本番環境でrbenvとCapistrano"
 date: 2012-10-31 07:33
 comments: true
-categories: [ruby, rails, rbenv, capistrano, deploy]
+tags: [ruby, rails, rbenv, capistrano, deploy]
 ---
 
 一応、ひととおり書きますが、ブログに書くことは必ず古くなり、また、内容もメンテナンスされる保証はありません。  

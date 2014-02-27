@@ -2,7 +2,7 @@
 title: "rbenv install 2.0.0-preview1とopenssl"
 date: 2012-11-21 20:03
 comments: true
-categories: [ruby, rbenv]
+tags: [ruby, rbenv]
 ---
 
 `rbenv install 2.0.0-preview1`はうまくいくものの、`bundle install`で`openssl`のエラーが出ました。

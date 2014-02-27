@@ -2,7 +2,7 @@
 title: "rbenvがあればCapistranoのbundle:installでdeploymentはいらない"
 date: 2012-11-01 19:54
 comments: true
-categories: [rails, ruby]
+tags: [rails, ruby]
 ---
 
 Railsで開発していて、デプロイはcapistranoを使い、本番環境でrbenvを使ってる皆様こんにちは。

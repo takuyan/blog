@@ -2,7 +2,7 @@
 title: "右脳と左脳"
 date: 2013-11-14 19:00
 comments: true
-categories: business
+tags: business
 ---
 
 __右脳の話は、右脳で聞かなきゃいけない。__  

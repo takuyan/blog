@@ -1,7 +1,7 @@
 ---
 title: "S.M.A.R.T. エラー"
 date: 2012-09-28 20:00
-categories: mac
+tags: mac
 ---
 
 <img src='http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Smart_Engine.JPG/800px-Smart_Engine.JPG?uselang=ja' class="img-rounded img-responsive" />

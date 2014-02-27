@@ -14,7 +14,7 @@ activate :blog do |blog|
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
-  # blog.taglink = "tags/{tag}.html"
+  blog.taglink = "tags/{tag}.html"
   blog.layout = "posts"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
@@ -33,7 +33,6 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", layout: false
-
 page '/about'
 page '/error.html', directory_index: false
 

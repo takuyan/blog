@@ -2,7 +2,7 @@
 title: "jQuery1.9に備えてlive()をon()に修正しましょう"
 date: 2013-01-28 23:00
 comments: true
-categories: [javascript, jquery]
+tags: [javascript, jquery]
 ---
 
 <img src='/images/2013/jquery-1-dot-9-upgrade.png' class='img-thumbnail' />

@@ -2,7 +2,7 @@
 title: "個人プロジェクト2012まとめ"
 date: 2013-01-09 12:30
 comments: true
-categories: [diary, rails, project]
+tags: [diary, rails, project]
 ---
 
 ※総括は [とあるRailsエンジニアの2012年](/blog/2013/01/09/summary-of-2012) を参照くださいませ。

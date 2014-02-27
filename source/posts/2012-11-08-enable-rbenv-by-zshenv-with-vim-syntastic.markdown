@@ -2,7 +2,7 @@
 title: "Syntasticを使うときはzshenvにrbenvの設定を書きましょう"
 date: 2012-11-08 08:38
 comments: true
-categories: [vim, rbenv, ruby]
+tags: [vim, rbenv, ruby]
 ---
 まあ、vimからrbenv経由でrubyを呼び出すときは、Syntastic関係なく、zshenvに書きましょう。
 

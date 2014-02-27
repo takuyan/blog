@@ -1,7 +1,7 @@
 ---
 title: "ようやくTCADに合格しました"
 date: 2012-09-05 08:27
-categories: titanium
+tags: titanium
 ---
 
 所謂、Titaniumの[検定試験](http://training.appcelerator.com/get-certified)です。

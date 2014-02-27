@@ -1,7 +1,7 @@
 @import colors
 @import bourbon
 @import media-queries
-@import url(http://fonts.googleapis.com/css?family=Tinos|Milonga)
+@import url(http://fonts.googleapis.com/css?family=Tinos|Inconsolata)
 
 // Write Custom Bootstrap Styles
 
@@ -44,6 +44,15 @@ $pre-scrollable-max-height: none
     color: #999
     font:
       size: 11px
+
+pre.highlight
+  @include border-top-radius(6px)
+  @include border-bottom-radius(6px)
+  background:
+    color: #fff
+  font:
+    family: Inconsolata
+  border: 1px solid #eee
 
 .navbar
   .navbar-toggle
@@ -90,7 +99,7 @@ body
 
 @include max-screen(320px)
   .logo_area
-    padding: 20px 0
+    padding: 40px 0
     margin: 0 0 20px
     h1
       font:
@@ -135,6 +144,12 @@ body
   strong
     @include linear-gradient(transparent 0, transparent 60%, $linear_color 60%, $linear_color 100%)
 
+.article_body > h2:first-child
+  margin:
+    top: 0 
+  padding:
+    top: 0
+
 .articles
   .article_info
     margin: 40px 0
@@ -142,7 +157,7 @@ body
     border-bottom: 1px solid #eee
     .article_title
       h2
-        margin: 0 0 10px
+        margin: 0 0 15px
         padding: 0 0 0 12px
         line-height: 1em
         border:
@@ -175,7 +190,7 @@ body
     font:
       size: 140%
       weight: normal
-  .recent_articles
+  .recent_articles, .side_tags
     margin: 0 0 40px
     li
       margin: 0 0 10px
@@ -197,18 +212,21 @@ body
           color: $green
 
 article
+  margin: 0 0 40px
   .page_title
     margin: 0 0 20px
     padding: 0 0 10px
     h1
       margin: 0
-      padding: 0 0 10px
+      padding: 0 0 15px
       font:
         size: 220%
     .help-block
       text-align: right
       .label
         letter-spacing: 0.2em
+        margin: 
+          left: 10px
 
 .about_me
   h2

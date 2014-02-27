@@ -1,7 +1,7 @@
 ---
 title: "ルーティング for Devise 2.1"
 date: 2012-09-06 8:30
-categories: rails
+tags: rails
 ---
 
 DeviseといえばRailsにおける[代表的な認証ライブラリ](https://www.ruby-toolbox.com/categories/rails_authentication)です。

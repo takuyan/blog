@@ -2,7 +2,7 @@
 title: "ChromeでJSONやRSS/Atomのソースを確認する"
 date: 2012-10-29 19:09
 comments: true
-categories: chrome
+tags: chrome
 ---
 
 JSONやRSS/Atomの実装をしていて面倒なのが、ソースの確認方法ですね。

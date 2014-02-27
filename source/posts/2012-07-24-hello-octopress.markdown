@@ -1,7 +1,7 @@
 ---
 title: "Hello Octopress"
 date: 2012-07-24 23:45
-categories: diary
+tags: diary
 ---
 
 ここ半年は、はてなブログがしっくりこないので、ブログを書きませんでした。

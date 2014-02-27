@@ -2,7 +2,7 @@
 title: "awesome_nested_setを導入したら最初にrebuild!しよう"
 date: 2012-12-21 14:22
 comments: true
-categories: [rails, ruby, gem]
+tags: [rails, ruby, gem]
 ---
 
 ツリー構造を表現するGemとして、 [awesome_nested_set](https://github.com/collectiveidea/awesome_nested_set) があります。

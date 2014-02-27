@@ -2,7 +2,7 @@
 title: "Railsのリスト操作におけるURL設計"
 date: 2013-02-25 22:49
 comments: true
-categories: [ruby, rails, design]
+tags: ruby, rails, design
 ---
 
 [前回の記事](/blog/2013/02/19/consideration-of-how-to-operate-the-list-on-rails/)を基に、Facebookで [#sendagayarb](https://twitter.com/search?q=%23sendagayarb) の皆さんとディスカッションした内容をここに残しておきます。

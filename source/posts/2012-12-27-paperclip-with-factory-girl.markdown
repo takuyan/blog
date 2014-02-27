@@ -2,7 +2,7 @@
 title: "Paperclip with factory_girl on Rspec"
 date: 2012-12-27 21:36
 comments: true
-categories: [rails, ruby, paperclip, factory_girl]
+tags: [rails, ruby, paperclip, factory_girl]
 ---
 
 今日は`Paperclip`なモデルをRspecでテストする際の注意事項についてメモ。

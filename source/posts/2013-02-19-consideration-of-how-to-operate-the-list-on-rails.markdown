@@ -2,7 +2,7 @@
 title: "ActsAsListによるリスト操作に関する考察"
 date: 2013-02-19 21:30
 comments: true
-categories: [ruby, rails, design]
+tags: [ruby, rails, design]
 ---
 
 **UPDATE:** [続きを書きました](/blog/2013/02/25/move-position-resources-best-practices/)

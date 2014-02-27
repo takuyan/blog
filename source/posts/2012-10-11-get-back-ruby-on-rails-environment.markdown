@@ -2,7 +2,7 @@
 title: "Rails-on-Mac開発環境構築"
 date: 2012-10-11 13:00
 comments: true
-categories: [rails, mac]
+tags: [rails, mac]
 ---
 
 先日、[Macbookが壊れた](/blog/2012/09/28/smart-error/)際、どうせならイチから環境構築しようと思い、バックアップを取らずに修理をお願いしました。

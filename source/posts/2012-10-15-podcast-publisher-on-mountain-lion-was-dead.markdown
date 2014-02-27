@@ -2,7 +2,7 @@
 title: "Podcast Publisher が Mountain Lion から消し去られた件について"
 date: 2012-10-15 20:09
 comments: true
-categories: mac
+tags: mac
 ---
 
 <img src='/images/2012/PodcastPublisher.png' class="img-rounded img-responsive" />

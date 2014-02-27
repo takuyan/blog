@@ -2,7 +2,7 @@
 title: "ひとつのモデルを立場の違うユーザで閲覧する場合のベストプラクティスを探る"
 date: 2013-02-18 16:00
 comments: true
-categories: [ruby, rails, design]
+tags: [ruby, rails, design]
 ---
 
 <img src='/images/2013/rails_way.jpg' class='img-thumbnail' />

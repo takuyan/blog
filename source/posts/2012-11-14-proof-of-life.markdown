@@ -2,7 +2,7 @@
 title: "死んだ時に遺書を送るサービス作った"
 date: 2012-11-14 20:30
 comments: true
-categories: [project, rails]
+tags: [project, rails]
 ---
 作った動機は単純で、**自分が死んだとき、あらかじめ書いておいた遺書を、嫁さんや子供たちに送りたい**なぁと思いまして。
 

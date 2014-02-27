@@ -2,7 +2,7 @@
 title: "おしごと2012まとめ"
 date: 2013-01-09 09:00
 comments: true
-categories: [rails, diary, project]
+tags: [rails, diary, project]
 ---
 
 ※総括は [とあるRailsエンジニアの2012年](/blog/2013/01/09/summary-of-2012) を参照くださいませ。

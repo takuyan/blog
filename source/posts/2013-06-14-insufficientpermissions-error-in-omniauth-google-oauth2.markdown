@@ -2,7 +2,7 @@
 title: "omniauth-google-oauth2でハマったメモ"
 date: 2013-06-14 12:02
 comments: true
-categories: rails
+tags: rails
 ---
 
 ## 目的

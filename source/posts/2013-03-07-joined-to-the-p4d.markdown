@@ -2,7 +2,7 @@
 title: "デザインの壁は #p4d に参加して乗り越えるべき"
 date: 2013-03-07 08:24
 comments: true
-categories: [ruby, design, rails]
+tags: ruby, design, rails
 ---
 
 <img class='img-thumbnail' src='/images/2013/p4d.png' />

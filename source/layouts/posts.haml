@@ -18,6 +18,9 @@
                 %h1
                   = current_page.title
                 .help-block
+                  - current_page.tags.each do |t|
+                    = link_to t, tag_path(t), class: 'label label-default'
+                   
                   %span.label.label-default
                     = current_page.date.strftime('%Y-%m-%d')
               .article_body
@@ -30,6 +33,14 @@
                 %li
                   %h4
                     = link_to a.title, a
+
+            %h3
+              Tags
+            %ul.side_tags.list-inline
+              - blog.tags.each do |t, articles|
+                %li
+                  %h4
+                    = link_to t, tag_path(t)
 
     = partial 'layouts/footer'
 
