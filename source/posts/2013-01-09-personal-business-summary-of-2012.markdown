@@ -13,7 +13,7 @@ READMORE
 
 [Gamebook Maker](http://gamebook.takuyan.com)
 
-<img src='/images/2013/gamebookmaker.png' class='img-thumbnail' />
+<img src='/images/2013/gamebookmaker.png' class='img-thumbnail img-responsive' />
 
 ゲームブックって知ってますか。自分の選択次第で物語が変わっていく本ですね。
 
@@ -24,7 +24,7 @@ READMORE
 
 [Google Suggest Hack](http://gsuggest.herokuapp.com)
 
-<img src='/images/2013/gsuggest.png' class='img-thumbnail' />
+<img src='/images/2013/gsuggest.png' class='img-thumbnail img-responsive' />
 
 かきスタという本業があり、そこではライターさんに役に立つ記事を書いてもらっています。
 しかし「役に立つ」の定義って意外と難しいのですね。

@@ -22,7 +22,7 @@ tags: [vim, rbenv, ruby]
 
 ### 構文エラーじゃないのに！
 
-<img src='/images/2012/invalid_syntax.png' class="img-rounded" />
+<img src='/images/2012/invalid_syntax.png' class="img-rounded img-responsive" />
 
 あ、もしかして、1.9 styleのHashで怒られてる？
 
@@ -42,7 +42,7 @@ fi
 > Zsh note: Modify your ~/.zshenv file instead of ~/.bash_profile.
 > [sstephenson/rbenv](https://github.com/sstephenson/rbenv#section_2.1)
 
-<img src='/images/2012/valid_syntax.png' class="img-rounded" />
+<img src='/images/2012/valid_syntax.png' class="img-rounded img-responsive" />
 
 ちゃんと通ったみたい。めでたしめでたし。
 

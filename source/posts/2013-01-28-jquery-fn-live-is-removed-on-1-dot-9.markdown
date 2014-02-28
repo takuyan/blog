@@ -5,7 +5,7 @@ comments: true
 tags: [javascript, jquery]
 ---
 
-<img src='/images/2013/jquery-1-dot-9-upgrade.png' class='img-thumbnail' />
+<img src='/images/2013/jquery-1-dot-9-upgrade.png' class='img-thumbnail img-responsive' />
 
 **2013年 ■□□□□□□□□□□□ 9% Done**
 

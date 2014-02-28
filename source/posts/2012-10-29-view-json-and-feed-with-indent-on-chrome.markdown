@@ -12,7 +12,7 @@ RSSの場合など特に、(私はChromeを使っているのですが)Chrome自
 
 ## JSON編
 
-<img src='/images/2012/json_viewer.jpeg' class="img-rounded" />
+<img src='/images/2012/json_viewer.jpeg' class="img-rounded img-responsive" />
 
 [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
 
@@ -22,14 +22,14 @@ Chromeにインストールしておけば、特に指定すること無く、�
 
 ## RSS編
 
-<img src='/images/2012/xv1.png' class="img-rounded" />
+<img src='/images/2012/xv1.png' class="img-rounded img-responsive" />
 
 [XV - XML Viewer](https://chrome.google.com/webstore/detail/xv-%E2%80%94-xml-viewer/eeocglpgjdpaefaedpblffpeebgmgddk)
 
 高機能なXMLリーダー。
 Firefoxのようにアウトラインも表示してくれるので、使いやすいです。
 
-<img src='/images/2012/feed_indent.jpeg' class="img-rounded" />
+<img src='/images/2012/feed_indent.jpeg' class="img-rounded img-responsive" />
 
 [Feed Indent View](https://chrome.google.com/webstore/detail/feed-intent-viewer/oceapojkdgeophkjdijkpbjifdnfimdh)
 

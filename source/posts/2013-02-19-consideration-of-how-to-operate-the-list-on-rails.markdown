@@ -5,7 +5,7 @@ comments: true
 tags: [ruby, rails, design]
 ---
 
-**UPDATE:** [続きを書きました](/blog/2013/02/25/move-position-resources-best-practices/)
+**UPDATE:** [続きを書きました](/posts/2013/02/25/move-position-resources-best-practices/)
 
 READMORE
 

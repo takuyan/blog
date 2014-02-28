@@ -5,7 +5,7 @@ comments: true
 tags: ruby, design, rails
 ---
 
-<img class='img-thumbnail' src='/images/2013/p4d.png' />
+<img class='img-thumbnail img-responsive' src='/images/2013/p4d.png' />
 
 [第16回 デザイナー向けプログラム部 #p4d at 万葉](http://connpass.com/event/1849/) に参加してきました！
 
@@ -21,11 +21,11 @@ READMORE
 
 ## デザインチェック
 
-<img class='img-thumbnail' src='/images/2012/proofoflife.png' />
+<img class='img-thumbnail img-responsive' src='/images/2012/proofoflife.png' />
 
 ### デザインの前に
 
-<img class='img-thumbnail' src='/images/2013/ikesai.png' />
+<img class='img-thumbnail img-responsive' src='/images/2013/ikesai.png' />
 
 似たようなコンセプトのデザインを真似ると良い、とのこと。そしてご存知[ikesai.con](http://www.ikesai.com)で探すと良い、と。
 
@@ -37,13 +37,13 @@ READMORE
 
 ファーストビューに飛び込んでくる「**29days 23hours 59minutes 44seconds**」が、**利用者の最後のメッセージを送信するまでの日数である**ということがわからんとのことでした。なので、身近にあるもので、それと表現すると良いとのこと。
 
-<img class='img-thumbnail' src='/images/2013/iphone_calender_icon.jpg' />
+<img class='img-thumbnail img-responsive' src='/images/2013/iphone_calender_icon.jpg' />
 
 あとで調べたのですが[Appleが推奨するSkeuomorphic Designとそのメリットデメリット](http://design-spice.com/2012/04/06/skeuomorphic-design/)という記事で紹介されていたので、よく読もうと思います。
 
 ### フォントがポップすぎる
 
-<img class='img-thumbnail' src='/images/2013/pop_font.png'>
+<img class='img-thumbnail img-responsive' src='/images/2013/pop_font.png'>
 
 ``` css
 font-family: 'Emilys Candy', cursive
@@ -53,14 +53,14 @@ font-family: 'Emilys Candy', cursive
 
 実際に変更してみた。
 
-<img class='img-thumbnail' src='/images/2013/times_font.png' />
+<img class='img-thumbnail img-responsive' src='/images/2013/times_font.png' />
 
 ``` css
 font-family: Times
 ```
 ### 操作性はとても良い
 
-<img class='img-thumbnail' src='/images/2013/inside_proofoflife.png' />
+<img class='img-thumbnail img-responsive' src='/images/2013/inside_proofoflife.png' />
 
 ログインしてからのチュートリアルや、メッセージ送信先の登録、メッセージ登録、宛先指定、の流れなどが、わかりやすくスムーズだとの言われて少し嬉しかったです。
 

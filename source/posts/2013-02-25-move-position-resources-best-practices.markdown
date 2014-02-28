@@ -5,7 +5,7 @@ comments: true
 tags: ruby, rails, design
 ---
 
-[前回の記事](/blog/2013/02/19/consideration-of-how-to-operate-the-list-on-rails/)を基に、Facebookで [#sendagayarb](https://twitter.com/search?q=%23sendagayarb) の皆さんとディスカッションした内容をここに残しておきます。
+[前回の記事](/posts/2013/02/19/consideration-of-how-to-operate-the-list-on-rails/)を基に、Facebookで [#sendagayarb](https://twitter.com/search?q=%23sendagayarb) の皆さんとディスカッションした内容をここに残しておきます。
 
 ## 前回までの流れ
 

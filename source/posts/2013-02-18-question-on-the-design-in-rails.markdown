@@ -5,7 +5,7 @@ comments: true
 tags: [ruby, rails, design]
 ---
 
-<img src='/images/2013/rails_way.jpg' class='img-thumbnail' />
+<img src='/images/2013/rails_way.jpg' class='img-thumbnail img-responsive' />
 
 **複数の出版社の本を管理するシステムがあり、単純に本の一覧データを閲覧したい**、という場合について考えます。
 
