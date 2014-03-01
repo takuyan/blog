@@ -1,7 +1,7 @@
 ---
 title: Poem.md
 date: 2014-02-27 19:32 JST
-tags: poem
+tags: poem, rails
 ---
 
 プロジェクト直下に、Poem.md、あるいは、Concept.md をつくろう。  
