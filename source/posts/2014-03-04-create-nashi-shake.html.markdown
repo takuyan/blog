@@ -23,8 +23,11 @@ READMORE
 実は[README](https://github.com/elrumordelaluz/csshake/blob/master/README.md)に上記のようなことが書いてある。  
 上手く動かすには、この[prefixfree](http://leaverou.github.io/prefixfree)なるものを使う必要がある。
 
+なお、モバイルで上手く動かない。  
+きっと解決策はあるんだろうけど、もうやる気が出ません。  
 技術ドリブンでなにか作るときは熱いうちに叩かないとね。  
-無駄に疲れた。 #ヤク毛刈り名人 #進捗ダメです
+
+はー、無駄に疲れた。 #ヤク毛刈り名人 #進捗ダメです
 
 ## 参考文献
 
