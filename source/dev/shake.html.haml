@@ -25,10 +25,10 @@ layout: false
         %span.shake.shake-delay
           Funasshiiiii
       .row
+        - shake = %w[shake-hard shake-slow shake-little shake-horizontal shake-vertical shake-rotate shake-opacity shake-crazy]
+        - nashi = %w[1 2 3 4]
         - 50.times do |i|
           .col-xs-4.col-md-3.col-lg-2
-            - shake = %w[shake-hard shake-slow shake-little shake-horizontal shake-vertical shake-rotate shake-opacity shake-crazy]
-            - nashi = %w[1 2 3 4]
             .nashi_wrap
               %img.shake.freez.img-responsive{src: "/images/2014/nashi#{nashi.sample}.jpg", class: shake.sample }
 
