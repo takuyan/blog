@@ -1,0 +1,57 @@
+---
+layout: false
+---
+
+!!!
+%html{lang: :ja}
+  %head
+    %meta{charset: 'utf-8'}
+    %title
+      梨シェイク - 梨汁研究会
+    %meta{'http-equiv' => 'X-UA-Compatible',  content: 'IE=edge;chrome=1'}
+    %meta{"http-equiv" => "content-language", content: "ja"}
+    %meta{content: "width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no", name: "viewport"}
+    %meta{content: "telephone=no", name: "format-detection"}
+    %meta{content: "yes", name: "apple-mobile-web-app-capable"}
+    %meta{name: :author, content: "Takuya Kato"}
+    %meta{name: :copyright, content: "Takuya Kato"}
+    %meta{property: "og:site_name", content: 'blog.takuyan.com'}
+    %meta{property: "og:locale", content: "ja_JP"}
+    = stylesheet_link_tag 'dev/csshake.min'
+    = stylesheet_link_tag 'dev/shake_main'
+  %body
+    .container
+      %h1
+        %span.shake.shake-delay
+          Funasshiiiii
+      .row
+        - 50.times do |i|
+          .col-xs-4.col-md-3.col-lg-2
+            - shake = %w[shake-hard shake-slow shake-little shake-horizontal shake-vertical shake-rotate shake-opacity shake-crazy]
+            - nashi = %w[1 2 3 4]
+            .nashi_wrap
+              %img.shake.freez.img-responsive{src: "/images/2014/nashi#{nashi.sample}.jpg", class: shake.sample }
+
+    #footer
+      %ul.list-inline
+        %li
+          %span
+            created by #{link_to('@katton', 'http://twitter.com/katton', target: :_blank)}
+        %li
+          %span
+            photo from #{link_to('Appbank', 'http://www.appbankstore.jp/products/detail.php?product_id=2626', target: :_blank)}
+
+    %script{src: 'http://code.jquery.com/jquery-1.11.0.min.js'}
+    %script{src: "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"}
+    = javascript_include_tag 'prefixfree.min'
+
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-3870468-7', 'takuyan.com');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+
