@@ -40,7 +40,7 @@ $pre-scrollable-max-height: none
 
 .breadcrumb
   padding: 0
-  margin: 0 0 40px
+  margin: 0 0 50px
   a
     color: #999
     font:
@@ -200,19 +200,24 @@ body
   margin: 0 0 30px
 
 .side
-  h3
-    border-bottom: 1px solid #eee
-    margin: 0 0 30px
-    padding: 0 0 10px
-    color: #cacabb
-    font:
-      size: 140%
-      weight: normal
-      family: 'Cutive Mono', serif
-
-  .recent_articles, .side_tags
+  .unit
     margin: 0 0 40px
-    li
+    h3, h4, p, a
+      color: #cacabb
+      transition: color 0.4s linear 0 
+    h3
+      border-bottom: 1px solid #eee
+      margin: 0 0 30px
+      padding: 0 0 10px
+      font:
+        size: 140%
+        weight: normal
+        family: 'Cutive Mono', serif
+    p
+      line-height: 1.6em
+      margin: 0 0 1.6em
+
+    ul li
       margin: 0 0 10px
       line-height: 1.6em
       h4
@@ -226,13 +231,16 @@ body
           color: #ccb
           transition: color 0.4s linear 0 
     &:hover
+      h3, p
+        color: $text-color
       a
         color: $link-color
         &:hover
           color: $green
-  .side_tags li h4
-    font:
-      family: 'Cutive Mono', serif
+
+    &.tags h4
+      font:
+        family: 'Cutive Mono', serif
 
 article
   margin: 0 0 40px
