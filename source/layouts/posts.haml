@@ -18,11 +18,12 @@
                 %h1
                   = current_page.title
                 .help-block
-                  - current_page.tags.each do |t|
-                    = link_to t, tag_path(t), class: 'label label-default'
-                   
-                  %span.label.label-default
+                  %span.date
                     = current_page.date.strftime('%Y-%m-%d')
+                  .article_tags
+                    - current_page.tags.each do |t|
+                      = link_to t, tag_path(t)
+                   
               .article_body
                 = yield
 
