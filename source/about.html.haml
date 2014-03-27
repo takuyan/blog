@@ -14,7 +14,7 @@ layout: single
       = tag :img, src: '/images/portfolio/image.jpg', class: 'img-circle img-responsive'
   .col-md-8
     .about_me
-      %h2
+      %h2.head
         Takuya Kato
 
       .article_body
@@ -37,11 +37,11 @@ layout: single
         Personal Projects
 
       .project
-        %a{href: "http://proofoflife.me", target: :_blank}
-          = tag :img, src: '/images/portfolio/proofoflife.png', class: 'img-rounded img-responsive'
         %h3
           %a{href: "http://proofoflife.me", target: :_blank}
             生存証明 - Proof of Life
+        %a.thumb{href: "http://proofoflife.me", target: :_blank}
+          = tag :img, src: '/images/portfolio/proofoflife.png', class: 'img-rounded img-responsive'
 
         .article_body
           %p
@@ -58,19 +58,17 @@ layout: single
               詳しく見る
 
       .project
-        %a{href: "http://gamebook.takuyan.com", target: :_blank}
-          = tag :img, src: '/images/portfolio/gamebook.png', class: 'img-thumbnail img-responsive'
         %h3
-          %a{href: "http://gamebook.takuyan.com", target: :_blank}
-            ゲームブック - Gamebook
+          %a{href: 'http://xn--nckvadb2e8ayas2lma0gwe.com/', target: :_blank}
+            ビジネスモデルキャンバス.com
+        %a.thumb{href: 'http://xn--nckvadb2e8ayas2lma0gwe.com/', target: :_blank}
+          = tag :img, src: '/images/portfolio/businessmodelcanvas.png', class: 'img-thumbnail img-responsive'
         .article_body
           %p
-            「スライムが現れた。戦うなら３ページへ、逃げるなら６ページ」というゲームブックをだれでも簡単に作れるようなサービスを目指していました。
-          %p
-            <a href="http://www.amazon.co.jp/gp/product/4163733507/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4163733507&linkCode=as2&tag=kattttttttton-22">「選択の科学」</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kattttttttton-22&l=as2&o=9&a=4163733507" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-            という本に触発されて作っていたのですが、
-            %strong 現在は開発を停止しています。
-
+            Business Model Generation Canvasをウェブから簡単に作成できるようなサービスを作りました。
+          .show_detail
+            %a{href: 'http://xn--nckvadb2e8ayas2lma0gwe.com/', target: :_blank}
+              詳しく見る
       .project
         %h3.comming-soon
           %a{href: "http://guildrive.com", target: :_blank}
@@ -101,21 +99,58 @@ layout: single
           %p
             DIYやリフォーム、リノベーションにおけるCookpadのような存在を目指して開発しています。
 
+      .project
+        %a.thumb{href: "http://gamebook.takuyan.com", target: :_blank}
+          = tag :img, src: '/images/portfolio/gamebook.png', class: 'img-thumbnail img-responsive'
+        %h3
+          %a{href: "http://gamebook.takuyan.com", target: :_blank}
+            ゲームブック - Gamebook
+        .article_body
+          %p
+            「スライムが現れた。戦うなら３ページへ、逃げるなら６ページ」というゲームブックをだれでも簡単に作れるようなサービスを目指していました。
+          %p
+            <a href="http://www.amazon.co.jp/gp/product/4163733507/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4163733507&linkCode=as2&tag=kattttttttton-22">「選択の科学」</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kattttttttton-22&l=as2&o=9&a=4163733507" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            という本に触発されて作っていたのですが、
+            %strong 現在は開発を停止しています。
+
+          .show_detail
+            %a{href: "http://gamebook.takuyan.com", target: :_blank}
+              詳しく見る
+
       %h2
         Tools
 
       .tool
-        %a{href: "http://printer.takuyan.com", target: :_blank}
-          = tag :img, src: '/images/portfolio/goodcharview.png', class: 'img-thumbnail img-responsive'
         %h3
           %a{href: "http://printer.takuyan.com", target: :_blank}
             Good Char View
+        %a.thumb{href: "http://printer.takuyan.com", target: :_blank}
+          = tag :img, src: '/images/portfolio/goodcharview.png', class: 'img-thumbnail img-responsive'
         .article_body
           %p
             子どもたちの「'学校'ってどうやって書くの？」という質問からカッとなって作りました。
           %p
             いまではAlfredのCmd+Lで事足りるのですが、まあそんなかんじのツールです。
 
+          .show_detail
+            %a{href: "http://printer.takuyan.com", target: :_blank}
+              詳しく見る
+
+      .tool
+        %h3
+          %a{href: "http://blog.takuyan.com/dev/shake", target: :_blank}
+            梨シェイク
+
+        %a.thumb{href: "http://blog.takuyan.com/dev/shake", target: :_blank}
+          = tag :img, src: '/images/2014/nashijiru.png', class: 'img-thumbnail img-responsive'
+        .article_body
+          %p
+            梨がブルブルします。
+            %br
+            すごくブルブルします。
+          .show_detail
+            %a{href: "http://blog.takuyan.com/dev/shake", target: :_blank}
+              詳しく見る
       .tool
         %h3
           %a{href: "http://gsuggest.herokuapp.com/", target: :_blank}
@@ -131,6 +166,10 @@ layout: single
             = link_to 'http://gsuggest.herokuapp.com/main/search?utf8=%E2%9C%93&q=%E5%A6%BB' do
               「妻」
             での関連検索ワードの違いは興味深いものがありますね。
+          .show_detail
+            %a{href: "http://gsuggest.herokuapp.com/", target: :_blank}
+              詳しく見る
+
       %h2
         Contact
       .article_body
