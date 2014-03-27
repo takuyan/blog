@@ -2,7 +2,8 @@
 title: "日本語を観て楽しむツール作った"
 date: 2012-11-17 22:24
 comments: true
-tags: [project, rails]
+tags: [business, rails]
+thumb: /images/2012/hyakkaryouran.png
 ---
 
 <img src='/images/2012/hyakkaryouran.png' class='img-rounded img-responsive' />

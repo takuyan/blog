@@ -2,6 +2,7 @@
 title: 梨シェイクを作りました
 date: 2014-03-04 19:50 JST
 tags: dev
+thumb: /images/2014/nashijiru.png
 ---
 
 <img class='img-responsive img-rounded' src='/images/2014/nashijiru.png' />

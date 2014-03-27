@@ -2,7 +2,8 @@
 title: "個人プロジェクト2012まとめ"
 date: 2013-01-09 12:30
 comments: true
-tags: [diary, rails, project]
+tags: [diary, rails, business]
+thumb: /images/2013/gamebookmaker.png
 ---
 
 ※総括は [とあるRailsエンジニアの2012年](/blog/2013/01/09/summary-of-2012) を参照くださいませ。

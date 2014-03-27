@@ -3,6 +3,7 @@ title: "Haml-4.0を使うときの6つの注意点"
 date: 2013-02-14 18:50
 comments: true
 tags: rails, ruby
+thumb: /images/2013/haml.png
 ---
 
 <img class='img-thumbnail img-responsive' src='/images/2013/haml.png' />

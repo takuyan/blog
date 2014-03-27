@@ -2,6 +2,7 @@
 title: リハビリのつもりがサービスを公開していた話
 date: 2014-03-27 17:03 JST
 tags: business, rails, backbonejs
+thumb: /images/portfolio/businessmodelcanvas.png
 ---
 
 <img class='img-responsive img-rounded' src='/images/portfolio/businessmodelcanvas.png' />

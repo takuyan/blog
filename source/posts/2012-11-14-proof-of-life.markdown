@@ -2,8 +2,10 @@
 title: "死んだ時に遺書を送るサービス作った"
 date: 2012-11-14 20:30
 comments: true
-tags: [project, rails]
+tags: [rails, business]
+thumb: /images/2012/proofoflife.png
 ---
+
 作った動機は単純で、**自分が死んだとき、あらかじめ書いておいた遺書を、嫁さんや子供たちに送りたい**なぁと思いまして。
 
 **サービスを作るなら自分が一番のユーザになれるものを作るべき**という自分のWebサービス原則に則って作ってみた。

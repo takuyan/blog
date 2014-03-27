@@ -3,6 +3,7 @@ title: "ひとつのモデルを立場の違うユーザで閲覧する場合の
 date: 2013-02-18 16:00
 comments: true
 tags: [ruby, rails, design]
+thumb: /images/2013/rails_way.jpg
 ---
 
 <img src='/images/2013/rails_way.jpg' class='img-thumbnail img-responsive' />
