@@ -4,12 +4,12 @@ date: 2014-03-04 19:50 JST
 tags: dev
 ---
 
-カッとなりました。  
-後悔はしていません。
-
 <img class='img-responsive img-rounded' src='/images/2014/nashijiru.png' />
 
 [梨シェイク](/dev/shake)
+
+カッとなりました。  
+後悔はしていません。
 
 READMORE
 
