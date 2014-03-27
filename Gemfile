@@ -12,6 +12,8 @@ gem "redcarpet"
 gem "sanitize"
 gem "middleman-syntax"
 gem "coffee-script"
+gem 'haml_coffee_assets'
+
 gem "bootstrap-sass", require: false
 
 # For feed.xml.builder
