@@ -113,7 +113,7 @@ body
     margin: 0
     padding: 0
   h2
-    color: $green
+    //color: $green
     border:
       left: 5px solid $green
     line-height: 1em
@@ -169,7 +169,10 @@ body
         font:
           size: 180%
         a
-          color: $green
+          color: $text-color
+          transition: color 0.3s linear 0 
+          &:hover
+            color: $link-color
     .article_body
       h2
         border: 0px solid $base_color
