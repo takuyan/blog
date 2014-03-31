@@ -5,13 +5,14 @@ comments: true
 tags: [vim, rbenv, ruby]
 thumb: /images/2012/syntastic_screenshot.png
 ---
+
 まあ、vimからrbenv経由でrubyを呼び出すときは、Syntastic関係なく、zshenvに書きましょう。
+
+READMORE
 
 ## Syntastic
 
 [Syntastic](https://github.com/scrooloose/syntastic) という優れものを昨日、知りました。
-
-<img src='/images/2012/syntastic_screenshot.png' class="img-rounded img-responsive" />
 
 > Image from Github [scrooloose/syntastic](https://github.com/scrooloose/syntastic)
 

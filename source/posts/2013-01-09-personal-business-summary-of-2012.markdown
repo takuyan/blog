@@ -14,8 +14,6 @@ READMORE
 
 [Gamebook Maker](http://gamebook.takuyan.com)
 
-<img src='/images/2013/gamebookmaker.png' class='img-thumbnail img-responsive' />
-
 ゲームブックって知ってますか。自分の選択次第で物語が変わっていく本ですね。
 
 「選択の科学」という本に触発されて作りました。  

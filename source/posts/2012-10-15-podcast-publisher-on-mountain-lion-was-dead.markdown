@@ -6,8 +6,6 @@ tags: mac
 thumb: /images/2012/PodcastPublisher.png
 ---
 
-<img src='/images/2012/PodcastPublisher.png' class="img-rounded img-responsive" />
-
 from [www.haxconnect24.com](http://www.haxconnect24.com/HaxConnect24/The_Hax_Cast/The_Hax_Cast.html)
 
 [Podcast Publisher](http://www.apple.com/jp/support/lionserver/podcast/) は、iMac(Lion)にプリインストールされていたツールである。

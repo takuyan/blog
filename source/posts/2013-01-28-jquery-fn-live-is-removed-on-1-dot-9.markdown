@@ -6,8 +6,6 @@ tags: [javascript, jquery]
 thumb: /images/2013/jquery-1-dot-9-upgrade.png
 ---
 
-<img src='/images/2013/jquery-1-dot-9-upgrade.png' class='img-thumbnail img-responsive' />
-
 **2013年 ■□□□□□□□□□□□ 9% Done**
 
 2013年の1/12(じゅうにぶんのいち)が早々に終わろうとしていますが、皆様、いかがお過ごしでしょうか。  

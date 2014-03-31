@@ -12,8 +12,6 @@ thumb: /images/2013/proofoflife-lifehacker.png
 
 [自分が死んだ時、大切な人にメッセージを届けてくれるサービス「Proof of Life」](http://www.lifehacker.jp/2012/11/proof_of_life.html)
 
-<img src='/images/2013/proofoflife-lifehacker.png' class='img-rounded img-responsive' />
-
 コレは別で記事を書こうと思って年を越してしまいました...
 この記事のお陰で前月比1000%くらいユーザが増えました。
 

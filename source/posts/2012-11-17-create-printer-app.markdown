@@ -6,8 +6,6 @@ tags: [business, rails]
 thumb: /images/2012/hyakkaryouran.png
 ---
 
-<img src='/images/2012/hyakkaryouran.png' class='img-rounded img-responsive' />
-
 ## [printer.takuyan.com](http://printer.takuyan.com)
 
 コレも夏に勢いで作った。後悔はしていない。

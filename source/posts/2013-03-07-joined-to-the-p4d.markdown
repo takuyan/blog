@@ -6,8 +6,6 @@ tags: ruby, design, rails
 thumb: /images/2013/p4d.png
 ---
 
-<img class='img-thumbnail img-responsive' src='/images/2013/p4d.png' />
-
 [第16回 デザイナー向けプログラム部 #p4d at 万葉](http://connpass.com/event/1849/) に参加してきました！
 
 [#p4d](http://prog4designer.github.com/)というのは**デザイナーとプログラマーで集まって Web や アプリをつくったりデザインやプログラミングについて相談したりする会**です。

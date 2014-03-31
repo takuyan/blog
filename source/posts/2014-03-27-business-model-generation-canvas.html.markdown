@@ -5,8 +5,6 @@ tags: business, rails, backbonejs
 thumb: /images/portfolio/businessmodelcanvas.png
 ---
 
-<img class='img-responsive img-rounded' src='/images/portfolio/businessmodelcanvas.png' />
-
 [ビジネスモデルキャンバス.com](http://xn--nckvadb2e8ayas2lma0gwe.com/)
 
 仕事で[Backbone.js](http://backbonejs.org/)と[Marionette.js](http://marionettejs.com/)を使っている部分があるのだけど、そこに大きめの変更が入ることになった。

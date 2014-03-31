@@ -12,9 +12,9 @@ thumb: /images/2012/proofoflife.png
 
 実際作ったのは夏だったのだけど、告知も何もしてなかったので、今更だけどブログで書いてみる。
 
-## [Proof of Life](http://proofoflife.me)
+READMORE
 
-<img src='/images/2012/proofoflife.png' class="img-rounded img-responsive" />
+# [Proof of Life](http://proofoflife.me)
 
 ## サービス概要
 

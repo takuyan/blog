@@ -6,8 +6,6 @@ tags: rails, ruby
 thumb: /images/2013/haml.png
 ---
 
-<img class='img-thumbnail img-responsive' src='/images/2013/haml.png' />
-
 閉じタグに嫌悪感を抱く全国519万人のHamlファンの皆さんこんにちは。([ruby-toolbox調べ](https://www.ruby-toolbox.com/))
 
 `bundle update`したらHamlが4.0になったそうです。同時に、いろんな機能追加が行われたとのこと。

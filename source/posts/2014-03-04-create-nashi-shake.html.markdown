@@ -5,8 +5,6 @@ tags: dev
 thumb: /images/2014/nashijiru.png
 ---
 
-<img class='img-responsive img-rounded' src='/images/2014/nashijiru.png' />
-
 [梨シェイク](/dev/shake)
 
 カッとなりました。  
