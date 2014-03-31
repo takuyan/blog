@@ -130,4 +130,9 @@ Router側はこれだけです。
 [Githubリポジトリのdoc](https://github.com/marionettejs/backbone.marionette/tree/master/docs)を読むと大抵わかります。  
 Marionette.js は必要な部分だけ掻い摘んで使うこともできるので、少しづつBackboneを進化させてたいなあと思っているひとにもオススメです。
 
+## 参考
+
+[Re: Single Page Application ではない場合 JavaScript コードのエントリポイントはどこにあるべきか？](http://webtech-walker.com/archive/2014/03/javascript-entry-point.html)
+※ 外村さんのブログ
+
 補足： ツッコミは歓迎ですので、ビシバシと指摘して頂ければと思います！
