@@ -24,6 +24,9 @@
                     - current_page.tags.each do |t|
                       = link_to t, tag_path(t)
                    
+              - if current_page.data.thumb
+                .main_image
+                  = tag :img, src: current_page.data.thumb , class: 'img-rounded img-responsive', alt: current_page.title
               .article_body
                 = yield
 
