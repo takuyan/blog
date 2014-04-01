@@ -6,7 +6,6 @@
 
 // Write Custom Bootstrap Styles
 
-//$font-family-sans-serif:  "Lucida Grande", "Lucida Sans Unicode", 'Hiragino Kaku Gothic Pro','Meiryo UI', Verdana, sans-serif
 $font-family-sans-serif:  'Lucida Grande', Arial, 'Hiragino Kaku Gothic Pro', Meiryo, 'Meiryo UI', 'メイリオ', sans-serif
 
 $link-color: $pp_blue
@@ -25,7 +24,7 @@ $body-bg: $base_color
 
 $breadcrumb-separator: '›'
 $breadcrumb-bg: $base_color
-$breadcrumb-color: #999
+$breadcrumb-color: #ccc
 
 //$text-color: darken($pp_brown, 24%)
 
@@ -43,9 +42,12 @@ $pre-scrollable-max-height: none
   padding: 0
   margin: 0 0 50px
   a
-    color: #999
+    color: #ccc
     font:
       size: 11px
+@include max-screen(320px)
+  .breadcrumb
+    margin: 0 0 1.6em
 
 pre.highlight
   @include border-top-radius(6px)
@@ -168,11 +170,12 @@ body
       h2
         margin: 0 0 15px
         padding: 0 0 0 12px
-        line-height: 1em
+        line-height: 1.2em
         border:
           left: 7px solid $green
         font:
           size: 180%
+          family: 'Tinos', $font-family-sans-serif
         a
           color: $text-color
           transition: color 0.3s linear 0 
@@ -191,7 +194,6 @@ body
           color: $link-color
     .help-block
       @include title-option
-      margin: 0 0 20px
 
 .articles > .article_info
   margin: 0 0 40px
@@ -271,7 +273,9 @@ article
       padding: 0 0 15px
       font:
         size: 220%
+        family: 'Tinos', $font-family-sans-serif
       border-bottom: 1px solid #eee
+      line-height: 1.2em
     .help-block
       @include title-option
 
