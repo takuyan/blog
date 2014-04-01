@@ -175,7 +175,7 @@ body
           left: 7px solid $green
         font:
           size: 180%
-          family: 'Tinos', $font-family-sans-serif
+          family: $font-family-sans-serif
         a
           color: $text-color
           transition: color 0.3s linear 0 
@@ -273,11 +273,17 @@ article
       padding: 0 0 15px
       font:
         size: 220%
-        family: 'Tinos', $font-family-sans-serif
+        family: $font-family-sans-serif
       border-bottom: 1px solid #eee
       line-height: 1.2em
     .help-block
       @include title-option
+@include max-screen(320px)
+  article
+    .page_title
+      h1
+        font:
+          size: 180%
 
 .about_me
   h2
