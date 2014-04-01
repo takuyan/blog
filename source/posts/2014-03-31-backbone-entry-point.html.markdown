@@ -132,7 +132,7 @@ Marionette.js は必要な部分だけ掻い摘んで使うこともできるの
 
 ## 参考
 
-[Re: Single Page Application ではない場合 JavaScript コードのエントリポイントはどこにあるべきか？](http://webtech-walker.com/archive/2014/03/javascript-entry-point.html)
+[Re: Single Page Application ではない場合 JavaScript コードのエントリポイントはどこにあるべきか？](http://webtech-walker.com/archive/2014/03/javascript-entry-point.html)  
 ※ 外村さんのブログ
 
-補足： ツッコミは歓迎ですので、ビシバシと指摘して頂ければと思います！
+補足： ツッコミ歓迎ですので、ビシバシと指摘して頂ければと思います！
