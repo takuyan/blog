@@ -10,6 +10,8 @@ thumb: /images/2014/marionettejs.png
 **わたくしの場合は[Marionette.js](http://marionettejs.com/)のControllerを使う**、となる。  
 どうか「新しいフレームワークの話なら結構です」とか思わないで。結構便利なんですよコレ。
 
+READMORE
+
 ## How To Use
 
 ブログ記事の編集画面だけ**やたらにリッチクライアント**なパターンを考えましょう。  
