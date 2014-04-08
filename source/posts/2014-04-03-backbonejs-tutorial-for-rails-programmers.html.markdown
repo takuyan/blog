@@ -1,5 +1,5 @@
 ---
-title: RailsエンジニアのためのBackbone.js入門
+title: RailsエンジニアのためのBackbone.js入門 (1)
 date: 2014-04-03 07:00 JST
 tags: rails, backbonejs
 thumb: /images/2014/backbonejs.png
@@ -119,7 +119,7 @@ app/assets
 
 ## 事始め
 
-さて、ここから実際に中身を書いてみます。  
+さて、次回から実際に中身を書いてみます。  
 
 ``` coffee
 # app/assets/javascripts/application.js.coffee
@@ -141,6 +141,4 @@ app/assets
 # TODO
 ```
 
-[wip] がんばります
-
-
+### [wip] RailsエンジニアのためのBackbone.js入門 (2)
