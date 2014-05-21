@@ -14,7 +14,7 @@ gem 'middleman-syntax'
 gem 'coffee-script'
 gem 'haml_coffee_assets'
 
-gem 'bootstrap-sass', require: false
+gem 'bootstrap-sass', require: false, github: 'twbs/bootstrap-sass'
 
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
