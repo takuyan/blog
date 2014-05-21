@@ -1,6 +1,8 @@
 require 'dotenv'
 Dotenv.load
 
+require 'bootstrap-sass'
+
 ###
 # Blog settings
 ###
@@ -53,6 +55,8 @@ activate :s3_sync do |s3_sync|
   s3_sync.acl                        = 'public-read'
   s3_sync.encryption                 = false
 end
+
+activate :gzip
 
 ###
 # Compass
