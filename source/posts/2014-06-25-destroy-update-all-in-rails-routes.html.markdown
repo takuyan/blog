@@ -158,5 +158,5 @@ end
 
 ## 関連記事
 
-- [単一項目のみを更新するRailsパターンを探る](posts/2013/02/18/one-attribute-update-best-practice-in-rails/)
+- [単一項目のみを更新するRailsパターンを探る](/posts/2013/02/18/one-attribute-update-best-practice-in-rails/)
 - [Railsのリスト操作におけるURL設計](/posts/2013/02/25/move-position-resources-best-practices/)
