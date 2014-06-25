@@ -18,9 +18,9 @@
 %meta{property: "og:site_name", content: 'blog.takuyan.com'}
 %meta{property: "og:locale", content: "ja_JP"}
 - if is_blog_article?
-  %meta{property: "og:image", content: "#{current_article.data.thumb}"}
+  %meta{property: "og:image", content: "http://blog.takuyan.com#{current_article.data.thumb}"}
 - elsif blog.articles.length > 0
-  %meta{property: "og:image", content: "#{blog.articles.first.data.thumb}"}
+  %meta{property: "og:image", content: "http://blog.takuyan.com#{blog.articles.first.data.thumb}"}
 
 - if is_blog_article?
   %meta{property: "og:title", content: "#{current_article.title}"}
