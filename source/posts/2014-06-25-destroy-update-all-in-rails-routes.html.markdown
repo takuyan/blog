@@ -2,7 +2,7 @@
 title: Railsで一度に全部処理するときのRoutes問題
 date: 2014-06-25 17:00 JST
 tags: rails, rest
-thumb: /images/2014/houndci.png
+thumb: /images/2014/rails_guides_outside_in.png
 ---
 
 TODO管理をするとして「すべてのタスクを削除したい」とか「すべてのタスクを終了にしたい」っていう要件、普通によくありますね。  
@@ -10,7 +10,7 @@ TODO管理をするとして「すべてのタスクを削除したい」とか�
 
 READMORE
 
-## 考え方
+## 考え方と使われ方
 
 すべてのリソースに対するアクションなので`DELETE /tasks`とか`PUT /tasks`で済ませたいというREST脳が働きますね。  
 どうやって使いたいか、というと、こんな感じ。
@@ -120,6 +120,10 @@ end
 ## コントローラ側の実装
 
 さて、コントローラを実装します。
+ここでは大雑把にやりますが、実際に作りこむ際は次の点を注意するようにしましょう。
+
+- [トランザクションの問題 (All or Nothingにしたいところ)](http://api.rubyonrails.org/classes/ActiveRecord/Transactions/ClassMethods.html)
+- [どのフォーマットで返すのか (formatごとのアレ)](http://api.rubyonrails.org/classes/ActionController/Responder.html)
 
 ### app/controllers/tasks_controller.rb
 
@@ -147,6 +151,12 @@ class TasksController < ApplicationController
 end
 ```
 
+なお、検証環境は以下のとおりです。
 
+- Ruby 2.1.2
+- Rails 4.1
 
+## 関連記事
 
+- [単一項目のみを更新するRailsパターンを探る](posts/2013/02/18/one-attribute-update-best-practice-in-rails/)
+- [Railsのリスト操作におけるURL設計](/posts/2013/02/25/move-position-resources-best-practices/)
