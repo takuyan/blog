@@ -3,6 +3,7 @@ Dotenv.load
 
 require 'bootstrap-sass'
 
+
 ###
 # Blog settings
 ###
@@ -116,7 +117,7 @@ set :images_dir, 'images'
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
 
-set :haml, { ugly: true }
+set :haml, { ugly: true, attr_wrapper: '"' }
 
 # Build-specific configuration
 configure :build do
