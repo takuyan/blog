@@ -99,10 +99,15 @@ edit_task GET    /tasks/:id/edit(.:format) tasks#edit
      root GET    /                         tasks#index
 ```
 
-とってもスッキリですね！
+注目はココ。
 
+```
+          DELETE /tasks(.:format)          tasks#destroy_all
+          PUT    /tasks(.:format)          tasks#update_all
+```
+
+とってもスッキリですね！  
 なお、昔は次のように書いていました。  
-これでも同じ用に使えるとは思いますが、すごいモヤモヤ感があったので、いまでは上のようなやり方にしています。
 
 ``` ruby
 # モヤモヤver
@@ -115,6 +120,14 @@ Rails.application.routes.draw do
   end
   root to: 'tasks#index'
 end
+```
+
+これでも同じように使えるとは思いますが、Generateされるhelperにすごいモヤモヤ感がありました。なので、いまでは最初に書いたやり方にしています。
+
+```
+# モヤモヤver
+destroy_all_posts DELETE /posts/destroy_all(.:format) posts#destroy_all
+ update_all_posts PUT    /posts/update_all(.:format)  posts#update_all
 ```
 
 ## コントローラ側の実装
