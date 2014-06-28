@@ -4,7 +4,7 @@
 .unit
   margin: 0 0 $margin
   h3, h4, p, a
-    color: #cacabb
+    color: $disable-color
     transition: color 0.4s linear 0 
   h3
     transition:
@@ -13,7 +13,7 @@
       timing-function: linear 
       delay: 0 
     border-bottom: 1px solid $body-bg
-    margin: 0 0 20px
+    margin: 0 0 $margin-inner
     padding: 0 0 10px
     letter-spacing: 0.1em
     font:
@@ -35,11 +35,11 @@
         weight: normal
       line-height: 1.6em
       a
-        color: #ccb
+        color: $disable-color
         transition: color 0.4s linear 0 
   &:hover
     h3
-      border-bottom: 1px solid #eee
+      border-bottom: 1px solid $line-color
     h3, p
       color: $text-color
     a

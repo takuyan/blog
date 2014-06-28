@@ -1,0 +1,190 @@
+pre
+  +border-top-radius(6px)
+  +border-bottom-radius(6px)
+  background:
+    color: #fff
+  font:
+    family: Inconsolata
+    size: 14px
+  border: 1px solid $line-color
+  margin: 0 0 1.6em
+
+body
+  padding: 64px 0 0
+  line-height: 1.8
+
+.main_image
+  margin: 0 0 1.6em
+
+.article_body
+  h2, h3, h4, h5
+    margin: 0
+    padding: 0
+  h2
+    //color: $green
+    border:
+      left: 5px solid $green
+    line-height: 1em
+    margin: 40px 0
+    padding: 0 0 0 12px
+    font:
+      size: 160%
+  h3
+    margin: 30px 0
+    font:
+      size: 140%
+  h4
+    margin: 20px 0
+    font:
+      size: 130%
+  h5
+    margin: 20px 0
+    font:
+      size: 120%
+  p
+    line-height: 1.8em
+    margin: 0 0 1.8em
+    font:
+      family: $font-family-sans-serif
+      size: 110%
+  ul, ol
+    margin: 0 0 20px
+    padding: 0 0 0 25px
+    li
+      line-height: 1.4em
+      margin: 0 0 10px
+      font:
+        size: 110%
+  strong
+    +linear-gradient(transparent 0, transparent 60%, $strong-text-color 60%, $strong-text-color 100%)
+
+.article_body > h2:first-child
+  margin:
+    top: 0 
+  padding:
+    top: 0
+
+.articles
+  .article_info
+    margin: 40px 0
+    padding: 40px 0
+    border-bottom: 1px solid #eee
+    .article_title
+      margin: 0 0 1.6em
+      h2
+        margin: 0 0 15px
+        padding: 0 0 0 12px
+        line-height: 1.2em
+        border:
+          left: 7px solid $green
+        font:
+          size: 180%
+          family: $font-family-sans-serif
+        a
+          color: $text-color
+          transition: color 0.3s linear 0 
+          &:hover
+            color: $link-color
+    .article_body
+      h2
+        border: 0px solid $base-color
+        padding: 0
+        color: $text-color
+    .goto_article
+      text-align: right
+      a
+        color: #ccc
+        &:hover
+          color: $link-color
+    .help-block
+      +title-option
+
+.articles > .article_info
+  margin: 0 0 40px
+  padding: 0 0 40px
+
+.disqus
+  margin: 0 0 $margin
+
+article
+  margin: 0 0 40px
+  .page_title
+    margin: 0 0 20px
+    padding: 0 0 10px
+    h1
+      margin: 0 0 15px
+      padding: 0 0 15px
+      font:
+        size: 220%
+        family: $font-family-sans-serif
+      border-bottom: 1px solid #eee
+      line-height: 1.2em
+    .help-block
+      +title-option
++max-screen(320px)
+  article
+    .page_title
+      h1
+        font:
+          size: 180%
+
+.about_me
+  h2
+    margin: 40px 0 20px
+    padding: 0 0 10px
+    border-bottom: 1px solid #eee
+    font:
+      family: 'Tinos', serif
+      size: 200%
+    &.head
+      margin-top: 0
+
+  .project, .tool
+    margin: 0 0 60px
+    h3
+      margin: 20px 0
+      padding: 0
+      font:
+        size: 150%
+      a:hover
+        color: $green
+
+    .thumb
+      margin: 0 0 20px
+      display: block
+
+    .show_detail
+      text-align: right
+      a
+        color: #ccc
+        &:hover
+          color: $link-color
+
+  p
+    margin: 0 0 1.6em
+    line-height: 1.6em
+
+  ul
+    margin: 0 0 20px
+    padding: 0 0 0 25px
+    li
+      line-height: 2em
+      margin: 0 0 6px
+      a
+        font:
+          size: 130%
+        &:hover
+          color: $green
+      &.comming-soon
+        a
+          color: $base1
+
+.my_photo
+  margin: 0 0 20px
+
+.not_found
+  .pager
+    .next
+      a
+        background-color: $green
+        color: white
