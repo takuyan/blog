@@ -1,0 +1,30 @@
+.header
+  margin: 0 0 $margin
+  padding: 60px 0
+  text-align: center
+  h1
+    margin: 0
+    padding: 0
+    color: $base02
+    font:
+      size: 400%
+      family: $main-font
+    a
+      color: $text-color
+      &:hover
+        color: $green
+        text-decoration: none
+    small
+      display: block
+      margin: 20px 0 
+      padding: 0 
+      font:
+        size: 16px
+
++max-screen(320px)
+  .header
+    padding: 40px 0
+    margin: 0 0 20px
+    h1
+      font:
+        size: 240%
