@@ -22,7 +22,7 @@ body
   h2
     //color: $green
     border:
-      left: 5px solid $green
+      left: 5px solid $accent-color
     line-height: 1em
     margin: 40px 0
     padding: 0 0 0 12px
@@ -65,9 +65,9 @@ body
 
 .articles
   .article_info
-    margin: 40px 0
-    padding: 40px 0
-    border-bottom: 1px solid #eee
+    margin: $margin 0
+    padding: $margin 0
+    border-bottom: 1px solid $line-color
     .article_title
       margin: 0 0 1.6em
       h2
@@ -75,7 +75,7 @@ body
         padding: 0 0 0 12px
         line-height: 1.2em
         border:
-          left: 7px solid $green
+          left: 7px solid $accent-color
         font:
           size: 180%
           family: $font-family-sans-serif
@@ -92,31 +92,19 @@ body
     .goto_article
       text-align: right
       a
-        color: #ccc
+        color: $sub-text-color
         &:hover
           color: $link-color
     .help-block
       +title-option
 
 .articles > .article_info
-  margin: 0 0 40px
-  padding: 0 0 40px
+  margin: 0 0 $margin
+  padding: 0 0 $margin
 
 article
-  margin: 0 0 40px
-  .page_title
-    margin: 0 0 20px
-    padding: 0 0 10px
-    h1
-      margin: 0 0 15px
-      padding: 0 0 15px
-      font:
-        size: 220%
-        family: $font-family-sans-serif
-      border-bottom: 1px solid #eee
-      line-height: 1.2em
-    .help-block
-      +title-option
+  margin: 0 0 $margin
+
 +max-screen(320px)
   article
     .page_title
@@ -126,9 +114,9 @@ article
 
 .about_me
   h2
-    margin: 40px 0 20px
+    margin: $margin 0 $margin-inner
     padding: 0 0 10px
-    border-bottom: 1px solid #eee
+    border-bottom: 1px solid $line-color
     font:
       family: 'Tinos', serif
       size: 200%
@@ -136,9 +124,9 @@ article
       margin-top: 0
 
   .project, .tool
-    margin: 0 0 60px
+    margin: 0 0 $margin
     h3
-      margin: 20px 0
+      margin: $margin-inner 0
       padding: 0
       font:
         size: 150%
@@ -146,13 +134,13 @@ article
         color: $green
 
     .thumb
-      margin: 0 0 20px
+      margin: 0 0 $margin-inner
       display: block
 
     .show_detail
       text-align: right
       a
-        color: #ccc
+        color: $sub-text-color
         &:hover
           color: $link-color
 
@@ -161,8 +149,8 @@ article
     line-height: 1.6em
 
   ul
-    margin: 0 0 20px
-    padding: 0 0 0 25px
+    margin: 0 0 $margin-inner
+    padding: 0 0 0 $margin-inner
     li
       line-height: 2em
       margin: 0 0 6px
@@ -176,4 +164,4 @@ article
           color: $base1
 
 .my_photo
-  margin: 0 0 20px
+  margin: 0 0 $margin-inner
