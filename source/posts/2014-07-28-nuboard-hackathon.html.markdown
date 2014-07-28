@@ -31,7 +31,7 @@ READMORE
 <img src='/images/2014/nuhack.jpg' class='img-responsive img-rounded' alt='NUboardを使って作業をしている様子' />
 
 実際にNUboardを使って導線などを検討しながら実装を進めました。  
-ピクシブさんでは「最近は **レッドブルよりミニッツメイドがヤバい** 」とのことで、たくさん戴きました。美味しかったです！
+ピクシブさんでは「最近は **レッドブルよりミニッツメイドがヤバい、ガッとクルヨ( ⁰⊖⁰)！** 」とのことで、たくさん戴きました。美味しかったです！
 
 [Google Street View Image API](https://developers.google.com/maps/documentation/streetview/?hl=ja) というものがあり、そのパラメータの扱われ方に1hr近く四苦八苦してしまいました。おかげでドメインを取得したり、リリースしたり、みたいな作業をする時間が無くなってしまったのがアレでした。
 
@@ -68,16 +68,18 @@ JSメインだからこそ、RailsのエラーとJSのエラーは素早く切�
 大きな冷蔵庫にあるフリードリンク（アルコール含む）や仮眠室など、エンジニアに良い環境を提供している会社なんだなあというオーラがスゴく伝わってきました。  
 ハッカソン当日は土曜日だったにも関わらず、少なくない社員の方が出社しており、趣味の時間を満喫しているのを見るにつけ、社員に愛されている会社だなあと感じました。
 
-<img src='/images/2014/pixiv-office-with-ebichang.png' class='img-responsive img-rounded' alt='物色している' />
+<img src='/images/2014/pixiv-office2.jpg' class='img-responsive img-rounded' alt='歓談' />
 
 オモシロソウなものがたくさんあったので、ハッカソン終了後はみんなで絵馬を見たり、資料を物色してました。
 
-<small>アレかと思い、写真は多少ぼかしています</small>
+<img src='/images/2014/pixiv-office-with-ebichang.png' class='img-responsive img-rounded' alt='物色' />
+
+<small>写真は多少ぼかしています</small>
 
 ### 欧文印刷さんからプレゼント
 
 欧文印刷さんから、参加者の皆さんに、たくさんプレゼント貰いました！
-私はバインダータイプの nu board を戴きまして、とても嬉しかったです！！
+私は-gramPadの他に、バインダータイプの nu board を戴きまして、とても嬉しかったです！！
 
 <a href="http://www.amazon.co.jp/gp/product/B00LNRDM1S/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=B00LNRDM1S&linkCode=as2&tag=kattttttttton-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00LNRDM1S&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=kattttttttton-22" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kattttttttton-22&l=as2&o=9&a=B00LNRDM1S" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
