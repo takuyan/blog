@@ -1,5 +1,5 @@
 ---
-title: リハビリのつもりがサービスを公開していた話
+title: ビジネスモデルキャンバスを作るツールを作った
 date: 2014-03-27 17:03 JST
 tags: business, rails, backbonejs
 thumb: /images/portfolio/businessmodelcanvas.png
