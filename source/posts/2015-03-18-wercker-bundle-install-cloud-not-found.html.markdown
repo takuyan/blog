@@ -1,5 +1,5 @@
 ---
-title: werckerのbundle-installでcloud-not-foundとか言われたらbundlerのversionを上げてみよう
+title: werckerのbundle-installでcloud-not-foundとか言われたらbundlerのversionを指定してみよう
 date: 2015-03-18 16:30 JST
 tags: rails, ci
 thumb: /images/2015/wercker-bundle-install.png
@@ -17,7 +17,7 @@ READMORE
 ## wercker.ymlの確認
 
 werckerのbundle-installステップはgithubにある。  
-https://github.com/wercker/step-bundle-install
+[https://github.com/wercker/step-bundle-install](https://github.com/wercker/step-bundle-install)
 
 [最近どうやらversionを指定できるようになった](https://github.com/wercker/step-bundle-install#112)とのこと。  
 やってみよう。
