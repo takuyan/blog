@@ -45,7 +45,7 @@ ga('send',  'pageview',  window.location.pathname + window.location.search);
 
 ## どうやってるのか？
 
-基本的にはrackのresponseを上書きする感じ。
+`rack-middleware`ですし、基本的に構えはrackのresponseを上書きする感じ。
 
 ```ruby
   # lib/rack/tracker.rb
@@ -87,9 +87,13 @@ ga('send',  'pageview',  window.location.pathname + window.location.search);
 ```
 
 `</#{handler.position}>`の位置で`sub!`してる。つまりreplaceしてる。  
-内容は`handler.render`した内容を`</#{handler.position}>`の手前に追記している。  
+内容は`handler.render`した内容を`</#{handler.position}>`の手前に追記している。なるほど。
+
+でこのgemは<a href='https://github.com/railslove/rack-tracker/blob/master/README.md#rationale' target='_blank'>色々なタグの出力に対応している</a>んだけど、この`handler`を継承して色々作ることで実現している。
 
 ## カスタマイズできてよさそう
 
 
 ## 本質的でないコードはなるべくRails外に出そう
+
+こういうトラッキングとかログとかそういうものはどんどんRailsの外にだすべきだよねって思いました。
