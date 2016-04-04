@@ -7,6 +7,9 @@
 書いて欲しいネタがあれば[こちら](https://github.com/takuyan/blog/issues/new)からリクエストしてください。  
 書くかもしれません。
 
+
 ## Copyright
 
 &copy; Takuya Kato All Right Reserved.
+
+ほげほげby河野
