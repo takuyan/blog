@@ -6,6 +6,7 @@ gem 'middleman'
 gem 'middleman-blog'
 gem 'middleman-s3_sync'
 gem 'middleman-sprockets'
+gem 'mime-types'
 gem 'dotenv'
 gem 'nokogiri'
 gem 'bourbon', require: false
