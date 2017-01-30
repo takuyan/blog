@@ -5,7 +5,9 @@ tags: dev
 thumb: /images/2014/nashijiru.png
 ---
 
-[梨シェイク](/dev/shake)
+梨シェイク
+
+<small>※ 2017-01-30削除. blog内部に変なもん作るもんじゃないと反省している。</small>
 
 カッとなりました。  
 後悔はしていません。
@@ -33,4 +35,3 @@ READMORE
 - [ふなっしー劇場](http://terawarosu.jimdo.com/)
 - [CSShake](http://elrumordelaluz.github.io/csshake/)
 - [prefixfree](http://leaverou.github.io/prefixfree)
-
