@@ -2,9 +2,10 @@
 # the following line to use 'https'
 source 'http://rubygems.org'
 
-gem 'middleman', '~> 3.4.0'
-gem 'middleman-blog', '~> 3.5'
+gem 'middleman'
+gem 'middleman-blog'
 gem 'middleman-s3_sync'
+gem 'middleman-sprockets'
 gem 'dotenv'
 gem 'nokogiri'
 gem 'bourbon', require: false
@@ -12,9 +13,9 @@ gem 'redcarpet'
 gem 'sanitize'
 gem 'middleman-syntax'
 gem 'coffee-script'
-gem 'haml_coffee_assets'
+gem 'pry-byebug'
 
-gem 'bootstrap-sass', require: false, github: 'twbs/bootstrap-sass'
+gem 'bootstrap-sass', require: false
 
 # For feed.xml.builder
-gem 'builder', '~> 3.0'
+gem 'builder'
