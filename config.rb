@@ -3,7 +3,6 @@ Dotenv.load
 
 require 'bootstrap-sass'
 
-
 ###
 # Blog settings
 ###
@@ -59,6 +58,10 @@ end
 
 activate :gzip
 
+activate :sprockets do |c|
+  c.expose_middleman_helpers = true
+end
+
 ###
 # Compass
 ###
@@ -108,7 +111,7 @@ activate :directory_indexes
 #   end
 # end
 
-activate :syntax#, line_numbers: true
+activate :syntax #, line_numbers: true
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
