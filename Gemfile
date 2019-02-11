@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 
 gem 'middleman'
 gem 'middleman-blog'
+gem 'middleman-livereload'
 gem 'middleman-s3_sync'
 gem 'middleman-sprockets'
 gem 'mime-types'
