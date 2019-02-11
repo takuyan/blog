@@ -1,6 +1,6 @@
 ---
 title: "おしごと2012まとめ"
-date: 2013-01-09 09:00
+date: 2013-01-09 09:00 JST
 comments: true
 tags: [rails, diary, business]
 ---
