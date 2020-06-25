@@ -154,7 +154,7 @@ GEM
       byebug (~> 9.0)
       pry (~> 0.10)
     public_suffix (2.0.5)
-    rack (2.0.1)
+    rack (2.2.3)
     rack-livereload (0.3.17)
       rack
     rb-fsevent (0.9.8)
