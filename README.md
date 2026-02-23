@@ -4,7 +4,7 @@
 
 ## Tech Baseline
 
-- Ruby: `3.2.6` (`/Users/takuyan/repos/blog/.ruby-version`)
+- Ruby: `4.0.1` (`/Users/takuyan/repos/blog/.ruby-version`)
 - Static site generator: Middleman 4.x
 - Main content: `/Users/takuyan/repos/blog/source/posts`
 
