@@ -1,8 +1,18 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use 'https'
-source 'http://rubygems.org'
+# Use HTTPS for gem downloads.
+source 'https://rubygems.org'
 
-gem 'middleman'
+# Keep this in sync with .ruby-version.
+ruby File.read('.ruby-version').strip
+
+gem 'logger'
+gem 'mutex_m'
+gem 'ostruct'
+gem 'benchmark'
+gem 'csv'
+gem 'rdoc'
+gem 'thor', '>= 1.3', '< 2.0'
+gem 'haml', '~> 5.2.2'
+gem 'middleman', '= 4.4.0'
 gem 'middleman-blog'
 gem 'middleman-livereload'
 gem 'middleman-s3_sync'
