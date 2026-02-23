@@ -1,7 +1,22 @@
 require 'dotenv'
 Dotenv.load
 
+require 'cgi'
+require 'uri'
 require 'bootstrap-sass'
+
+# Ruby 4 removed CGI.parse. Keep legacy behavior expected by older Middleman plugins.
+unless CGI.respond_to?(:parse)
+  class << CGI
+    def parse(query)
+      params = Hash.new { |h, k| h[k] = [] }
+      URI.decode_www_form(query.to_s).each do |key, value|
+        params[key] << value
+      end
+      params
+    end
+  end
+end
 
 ###
 # Blog settings
@@ -124,7 +139,8 @@ set :images_dir, 'images'
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
 
-set :haml, { ugly: true, attr_wrapper: '"' }
+# Old Haml options are no longer accepted on modern runtimes.
+set :haml, {}
 
 # Build-specific configuration
 configure :build do
