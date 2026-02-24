@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <%= partial 'layouts/head' %>
+  </head>
+  <body>
+    <%= partial 'layouts/navigation' %>
+    <div class="container">
+      <header class="header">
+        <h1>
+          <% if content_for?(:header) %>
+            <%= yield_content :header %>
+          <% else %>
+            <a href="https://twitter.com/katton" target="_blank">
+              <%= tag :img, src: '/images/portfolio/image.jpg', class: 'img-circle' %>
+            </a>
+            <a href="/">
+              blog.takuyan.com
+            </a>
+          <% end %>
+        </h1>
+      </header>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <%= partial 'layouts/footer' %>
+
+    <% if content_for?(:js) %>
+      <%= yield_content :js %>
+    <% end %>
+  </body>
+</html>

@@ -121,7 +121,8 @@ activate :directory_indexes
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-activate :livereload
+# TODO: investigate why livereload fails (socket bind / resolver errors) in current runtime.
+# activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do

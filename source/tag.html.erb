@@ -1,0 +1,71 @@
+---
+pageable: true
+per_page: 12
+---
+
+<% content_for :title do %>
+  <%= tagname %>
+<% end %>
+
+<% content_for :header do %>
+  <a href="<%= tag_path(tagname) %>">/<%= tagname %>/</a>
+<% end %>
+
+<div class="articles">
+  <% page_articles.each_with_index do |article, i| %>
+    <div class="article_info">
+      <div class="article_title">
+        <h2><a href="<%= article.url %>"><%= article.title %></a></h2>
+      </div>
+      <div class="help-block">
+        <div class="article_tags">
+          <% article.tags.each do |t| %>
+            <a href="<%= tag_path(t) %>"><%= t %></a>
+          <% end %>
+        </div>
+        <span class="date"><%= article.date.strftime('%Y-%m-%d') %></span>
+      </div>
+
+      <% if article.data.thumb %>
+        <div class="main_image">
+          <a href="<%= article.url %>">
+            <%= tag :img, src: article.data.thumb, class: 'img-rounded img-responsive', alt: article.title %>
+          </a>
+        </div>
+      <% end %>
+
+      <div class="article_body">
+        <%= article.summary %>
+      </div>
+
+      <div class="goto_article">
+        <a href="<%= article.url %>">
+          <i class="fa fa-chevron-right"></i>
+          続きを読む
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if paginate && num_pages > 1 %>
+  <ul class="pager">
+    <% if prev_page %>
+      <li class="previous">
+        <a href="<%= prev_page %>">
+          <i class="fa fa-chevron-left"></i>
+          Prev
+        </a>
+      </li>
+    <% end %>
+
+    <% if next_page %>
+      <li class="next">
+        <a href="<%= next_page %>">
+          Next
+          <i class="fa fa-chevron-right"></i>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
