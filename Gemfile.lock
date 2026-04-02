@@ -201,7 +201,7 @@ GEM
       stringio
     public_suffix (7.0.2)
     racc (1.8.1)
-    rack (2.2.22)
+    rack (2.2.23)
     rack-livereload (0.3.17)
       rack
     rb-fsevent (0.11.2)
