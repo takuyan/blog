@@ -65,7 +65,7 @@ try {
   assert.equal(await visible('#site-navigation'), true);
   assert.equal(await visible('.navbar-toggle'), false);
   await screenshot('desktop-home');
-  const post = await evaluate(`Array.from(document.querySelectorAll('a[href]')).map(a => a.getAttribute('href')).find(h => /^\/posts\/\d/.test(h))`);
+  const post = await evaluate(String.raw`Array.from(document.querySelectorAll('a[href]')).map(a => a.getAttribute('href')).find(h => /^\/posts\/\d/.test(h))`);
   assert.ok(post, 'Homepage post link');
   await visit(post);
   assert.equal(await visible('h1'), true);
