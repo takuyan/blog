@@ -12,23 +12,26 @@ gem 'csv'
 gem 'rdoc'
 gem 'thor', '>= 1.3', '< 2.0'
 gem 'haml', '~> 5.2.2'
-gem 'middleman', '= 4.4.0'
+gem 'middleman', '~> 4.6.3'
 gem 'middleman-blog'
 gem 'middleman-livereload'
 gem 'middleman-s3_sync'
 gem 'middleman-sprockets'
-gem 'sprockets', '~>3.7'
+gem 'sprockets', '~> 4.2.2'
 gem 'mime-types'
 gem 'dotenv'
 gem 'nokogiri'
 gem 'bourbon', require: false
-gem 'redcarpet'
+gem 'redcarpet', '~> 3.6.1'
 gem 'sanitize'
 gem 'middleman-syntax'
 gem 'coffee-script'
 gem 'pry-byebug'
 
-gem 'bootstrap-sass', require: false
+gem 'bootstrap-sass', '~> 3.4.1', require: false
 
 # For feed.xml.builder
 gem 'builder'
+
+gem 'activesupport', '~> 7.2', '>= 7.2.3.1'
+gem 'bundler-audit', require: false

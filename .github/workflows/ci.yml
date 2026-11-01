@@ -20,7 +20,21 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Audit dependencies
+        run: bundle exec bundler-audit check --update
+
       - name: Build site
         env:
           MIDDLEMAN_DISABLE_LIVERELOAD: "1"
-        run: bundle exec middleman build
+        run: bundle exec middleman build --bail
+
+      - name: Verify public artifacts
+        run: bundle exec ruby script/verify-build
+
+      - name: Setup Node for browser checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify desktop and mobile behavior
+        run: node script/verify-browser.mjs

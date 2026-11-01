@@ -28,17 +28,3 @@
     </div>
   </div>
 </div>
-
-<% content_for :js do %>
-  <script>
-    // 古いURLへアクセスしたユーザへの導線
-    var url = document.location.pathname;
-    if (url.match('blog')) {
-      var newUrl = url.replace('/blog/', '/posts/');
-      $('#suggest').html("<a href='" + newUrl + "'>記事はこちら <i class='fa fa-chevron-right' /></a>");
-      $('.logo_area h1').html('301<small>Moved Permanently</small>');
-    } else {
-      $('#suggest').remove();
-    }
-  </script>
-<% end %>

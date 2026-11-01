@@ -1,0 +1,63 @@
+#!/usr/bin/env ruby
+require 'nokogiri'
+require 'zlib'
+require 'uri'
+require 'pathname'
+require 'net/http'
+require 'digest'
+require 'base64'
+
+root = Pathname.new('build').expand_path
+%w[index.html about/index.html error.html feed.xml stylesheets/application.css javascripts/application.js].each do |name|
+  abort "Missing output: #{name}" unless root.join(name).file?
+end
+abort 'Draft output detected' unless Dir['build/**/*'].none? { |p| p.split('/').include?('drafts') }
+# Check both paths and references without printing any draft contents or names.
+drafts = Dir['source/posts/drafts/**/*'].select { |p| File.file?(p) }.map { |p| File.basename(p).split('.').first }
+html_paths = Dir['build/**/*.html']
+missing = []
+cdn = {}
+html_paths.each do |path|
+  text = File.read(path)
+  abort 'Draft reference detected' if text.include?('/posts/drafts/') || drafts.any? { |name| text.include?(name) }
+  doc = Nokogiri::HTML(text)
+  abort "Legacy JS included: #{path}" if doc.css('script[src]').any? { |s| s['src'].match?(/jquery|bootstrap/i) }
+  doc.css('script[src], link[rel="stylesheet"]').each do |node|
+    url = node['src'] || node['href']
+    next unless url.start_with?('http', '//')
+    abort "Insecure asset: #{url}" unless url.start_with?('https://')
+    abort "Missing SRI: #{url}" unless node['integrity'] && node['crossorigin'] == 'anonymous'
+    cdn[url] = node['integrity']
+  end
+  doc.css('a[href], img[src], script[src], link[href]').each do |node|
+    href = node['href'] || node['src']
+    next if href.nil? || href.empty? || href.start_with?('//') || href.match?(/\A[a-z][a-z0-9+.-]*:/i)
+    uri = URI.parse(href) rescue next
+    target = uri.path.empty? ? Pathname.new(path).expand_path : (uri.path.start_with?('/') ? root.join(uri.path.delete_prefix('/')) : Pathname.new(path).dirname.join(uri.path).expand_path)
+    target = target.join('index.html') if target.directory?
+    unless target.file?
+      missing << [root.relative_path_from(root).to_s, target.relative_path_from(root).to_s].last
+      next
+    end
+    # Navigation and generated pagination must always resolve.
+  end
+  doc.css('.navbar a[href], .pagination a[href], .pager a[href]').each do |node|
+    href = node['href']; next unless href.start_with?('/') && !href.start_with?('//')
+    target = root.join(href.delete_prefix('/')); target = target.join('index.html') if target.directory?
+    abort "Broken navigation in #{path}" unless target.file?
+  end
+end
+feed = Nokogiri::XML(File.read('build/feed.xml')) { |c| c.strict }
+abort 'Empty feed' if feed.xpath('//*[local-name()="entry"]').empty?
+Dir['build/**/*.gz'].each do |path|
+  abort "Invalid gzip: #{path}" unless Zlib::GzipReader.open(path, &:read) == File.binread(path.delete_suffix('.gz'))
+end
+cdn.each do |url, integrity|
+  response = Net::HTTP.get_response(URI(url))
+  abort "CDN unavailable: #{url}" unless response.is_a?(Net::HTTPSuccess)
+  algorithm, expected = integrity.split('-', 2)
+  actual = Base64.strict_encode64(Digest.const_get(algorithm.upcase).digest(response.body))
+  abort "SRI mismatch: #{url}" unless actual == expected
+end
+puts "Public artifact checks passed: #{html_paths.length} HTML pages, #{Dir['build/**/*.gz'].length} gzip files, #{cdn.length} CDN integrity checks."
+puts "Existing content/asset missing targets: #{missing.uniq.sort.inspect}"
