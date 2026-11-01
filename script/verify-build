@@ -55,7 +55,7 @@ end
 feed = Nokogiri::XML(File.read('build/feed.xml')) { |c| c.strict }
 abort 'Empty feed' if feed.xpath('//*[local-name()="entry"]').empty?
 Dir['build/**/*.gz'].each do |path|
-  abort "Invalid gzip: #{path}" unless Zlib::GzipReader.open(path, &:read) == File.binread(path.delete_suffix('.gz'))
+  abort "Invalid gzip: #{path}" unless Zlib::GzipReader.open(path, &:read).b == File.binread(path.delete_suffix('.gz'))
 end
 cdn.each do |url, integrity|
   response = Net::HTTP.get_response(URI(url))
