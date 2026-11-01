@@ -32,6 +32,9 @@ jobs:
         id: public-artifacts
         run: bundle exec ruby script/verify-build
 
+      - name: Verify template capture and validation regressions
+        run: bundle exec ruby script/verify-rendering-regressions
+
       - name: Setup Node for browser checks
         uses: actions/setup-node@v4
         with:

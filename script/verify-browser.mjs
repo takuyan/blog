@@ -1,7 +1,7 @@
 // Use the Chrome and Node runtimes already present on the GitHub runner.
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
-import { readFile, stat, mkdtemp, rm, mkdir, writeFile } from 'node:fs/promises';
+import { readFile, readdir, stat, mkdtemp, rm, mkdir, writeFile } from 'node:fs/promises';
 import { resolve, extname, join } from 'node:path';
 import { tmpdir } from 'node:os';
 import assert from 'node:assert/strict';
@@ -37,10 +37,10 @@ try {
   const pending = new Map();
   socket.onmessage = ({ data }) => { const msg = JSON.parse(data); if (pending.has(msg.id)) { const { resolve, reject, timer } = pending.get(msg.id); clearTimeout(timer); pending.delete(msg.id); msg.error ? reject(new Error(JSON.stringify(msg.error))) : resolve(msg.result); } };
   const call = (method, params = {}) => new Promise((resolve, reject) => { const requestId = ++id; const timer = setTimeout(() => reject(new Error(`CDP timeout: ${method}`)), 15000); pending.set(requestId, { resolve, reject, timer }); socket.send(JSON.stringify({ id: requestId, method, params })); });
-  const evaluate = async expression => { const r = await call('Runtime.evaluate', { expression, returnByValue: true }); if (r.exceptionDetails) throw new Error(JSON.stringify(r.exceptionDetails)); return r.result.value; };
+  const evaluate = async expression => { const r = await call('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true }); if (r.exceptionDetails) throw new Error(JSON.stringify(r.exceptionDetails)); return r.result.value; };
   await call('Page.enable');
   await mkdir('output/playwright', { recursive: true });
-  const screenshot = async name => { const result = await call('Page.captureScreenshot', { format: 'png' }); await writeFile(`output/playwright/${name}.png`, Buffer.from(result.data, 'base64')); };
+  const screenshot = async name => { await evaluate('document.fonts.ready.then(() => true)'); const result = await call('Page.captureScreenshot', { format: 'png' }); await writeFile(`output/playwright/${name}.png`, Buffer.from(result.data, 'base64')); };
   const visit = async path => {
     await call('Page.navigate', { url: base + path });
     for (let i = 0; i < 100; i++) {
@@ -72,12 +72,52 @@ try {
   assert.equal(await visible('h1'), true);
   await visit('/about/');
   assert.equal(await visible('h1'), true);
+  // Browsers repair nested documents: verify exact structure/content on every
+  // generated page instead of only checking that a heading is visible.
+  const htmlFiles = (await readdir(root, { recursive: true })).filter(p => p.endsWith('.html')).sort();
+  const coverage = [];
+  for (const width of [390, 1280]) {
+    await call('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: width === 390 });
+    for (const file of htmlFiles) {
+      const path = '/' + file;
+      await visit(path);
+      const state = await evaluate(`(() => {
+        const count = s => document.querySelectorAll(s).length;
+        const text = s => document.querySelector(s)?.textContent.replace(/\\s+/g, ' ').trim();
+        return { nav: count('.navbar'), menu: count('#site-navigation'), footer: count('#footer'),
+          headingCount: count('.header > h1, .page_title > h1'), heading: text('.header > h1, .page_title > h1'),
+          title: document.title.replace(/\\s+/g, ' ').trim(),
+          nestedLayout: count('.header .navbar, .header #footer, .header .article_info'),
+          aboutSections: Array.from(document.querySelectorAll('h2, h3')).map(e => e.textContent.trim()),
+          scripts: count('script[src="/javascripts/application.js"]') };
+      })()`);
+      for (const key of ['nav', 'menu', 'footer', 'headingCount', 'scripts']) assert.equal(state[key], 1, `${path}: ${key} at ${width}`);
+      assert.equal(state.nestedLayout, 0, `${path}: nested layout`);
+      assert.ok(state.heading && !state.title.includes('<'), `${path}: heading/title`);
+      if (file === 'about/index.html') {
+        assert.equal(state.heading, 'About Me');
+        assert.equal(state.title, 'About Me - blog.takuyan.com');
+        for (const label of ['Takuya Kato', 'Personal Projects', 'Contact']) assert.equal(state.aboutSections.filter(t => t === label).length, 1);
+      } else if (file === 'error.html') {
+        assert.equal(state.heading, '404 ページがみつかりません');
+        assert.equal(state.title, '404 Page Not Found - blog.takuyan.com');
+      } else if (file.startsWith('posts/tags/')) {
+        const tag = state.heading.slice(1, -1);
+        assert.equal(state.heading, `/${tag}/`);
+        assert.equal(tag.replaceAll('_', '-'), file.split('/')[2]);
+        assert.equal(state.title, `${tag} - blog.takuyan.com`);
+      }
+      if (['about/index.html', 'error.html', 'posts/tags/ruby/index.html'].includes(file)) await screenshot(`${width}-${file.replaceAll('/', '-')}`);
+      coverage.push({ path, width });
+    }
+  }
+  await writeFile('output/browser-coverage.json', JSON.stringify(coverage, null, 2));
   await visit('/error.html');
   assert.equal(await evaluate(`document.getElementById('suggest') === null`), true);
   await visit('/blog/legacy-post/');
   assert.equal(await evaluate(`document.querySelector('#suggest a').getAttribute('href')`), '/posts/legacy-post/');
   assert.equal(await evaluate(`typeof window.jQuery`), 'undefined');
-  console.log('Browser checks passed: mobile open/close and ARIA, no overflow, desktop navigation, post, about, error and legacy URL suggestion.');
+  console.log(`Browser checks passed: ${htmlFiles.length} HTML pages at both widths (${coverage.length} visits), mobile open/close and ARIA, desktop navigation, exact about/error/tag headings and legacy URL suggestion.`);
 } finally {
   if (socket) socket.close();
   chrome.kill();

@@ -5,6 +5,12 @@ require 'cgi'
 require 'uri'
 require 'bootstrap-sass'
 
+# Tilt 2.9 also resolves the compound extension before .erb. Use Middleman's
+# renderer so content_for blocks carry the marker required by capture_html.
+after_configuration do
+  Tilt.register(Middleman::Renderers::ERb::Template, 'html.erb')
+end
+
 # Ruby 4 removed CGI.parse. Keep legacy behavior expected by older Middleman plugins.
 unless CGI.respond_to?(:parse)
   class << CGI

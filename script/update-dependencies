@@ -27,7 +27,8 @@ cp -pR source "$stage_dir/source"
 
 cp -p Gemfile "$stage_dir/Gemfile"
 mkdir "$stage_dir/script"
-cp -p script/verify-build script/verify-browser.mjs "$stage_dir/script/"
+cp -p script/verify-build script/verify-browser.mjs script/verify-rendering-regressions "$stage_dir/script/"
+cp -R script/lib "$stage_dir/script/"
 
 export BUNDLE_GEMFILE="$stage_dir/Gemfile"
 export BUNDLE_PATH="$repo_dir/vendor/bundle"
@@ -42,6 +43,7 @@ MIDDLEMAN_DISABLE_LIVERELOAD=1 rbenv exec bundle _2.7.2_ exec middleman build --
 
 # Apply the same public-output and browser checks as CI before promotion.
 rbenv exec bundle _2.7.2_ exec ruby script/verify-build
+rbenv exec bundle _2.7.2_ exec ruby script/verify-rendering-regressions
 node script/verify-browser.mjs
 
 # Do not overwrite changes made while dependency installation was running.

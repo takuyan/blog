@@ -125,14 +125,25 @@ uploads the complete build or source tree.
 bundle _2.7.2_ exec bundler-audit check --update
 bundle _2.7.2_ exec middleman build --bail
 bundle _2.7.2_ exec ruby script/verify-build
+bundle _2.7.2_ exec ruby script/verify-rendering-regressions
 node script/verify-browser.mjs
 ```
 
 Browser verification needs Node 22 and Chrome (set `CHROME_BIN` to an existing
 browser executable outside Linux). CI supplies these runtimes. Checks cover the
-home, a post, about and error pages; mobile menu open/close and ARIA state;
+every generated HTML page at 390px and 1280px, including all tag pages;
+exact About/error/tag titles and headings; mobile menu open/close and ARIA state;
 desktop navigation; horizontal overflow; and legacy `/blog/` URL suggestions.
 Screenshots are saved in `output/playwright/`.
+The full visit inventory is saved in `output/browser-coverage.json`.
+
+Tilt 2.9 resolves `.html.erb` separately from `.erb`. Both must use Middleman's
+renderer: the generic Tilt renderer omits the marker Padrino needs to capture
+`content_for` blocks, causing layout HTML to appear inside titles and headings.
+The explicit compound-extension registration in `config.rb` preserves capture
+without reverting any dependency. The regression check exercises buffer isolation
+and proves malformed document/navigation/body output is rejected. Artifact checks
+count document tags before DOM parsing, which would otherwise repair duplicates.
 
 The artifact check verifies main outputs, compiled CSS, navigation/pagination
 links, valid feed entries, byte-identical gzip decompression, absence of legacy
