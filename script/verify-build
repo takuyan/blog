@@ -14,6 +14,8 @@ end
 abort 'Draft output detected' unless Dir['build/**/*'].none? { |p| p.split('/').include?('drafts') }
 # Check both paths and references without printing any draft contents or names.
 drafts = Dir['source/posts/drafts/**/*'].select { |p| File.file?(p) }.map { |p| File.basename(p).split('.').first }
+css = File.read('build/stylesheets/application.css')
+abort 'Stylesheet was not compiled' unless css.include?('.navbar') && css.include?('@media') && !css.include?('@import vendor/')
 html_paths = Dir['build/**/*.html']
 missing = []
 cdn = {}
@@ -36,7 +38,7 @@ html_paths.each do |path|
     target = uri.path.empty? ? Pathname.new(path).expand_path : (uri.path.start_with?('/') ? root.join(uri.path.delete_prefix('/')) : Pathname.new(path).dirname.join(uri.path).expand_path)
     target = target.join('index.html') if target.directory?
     unless target.file?
-      missing << [root.relative_path_from(root).to_s, target.relative_path_from(root).to_s].last
+      missing << target.relative_path_from(root).to_s
       next
     end
     # Navigation and generated pagination must always resolve.
