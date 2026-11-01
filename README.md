@@ -4,9 +4,9 @@
 
 ## Tech Baseline
 
-- Ruby: `4.0.1` (`.ruby-version`)
+- Ruby: `4.0.9` (`.ruby-version`)
 - Bundler: `2.7.2` (`Gemfile.lock`)
-- Static site generator: Middleman `4.4.0`
+- Static site generator: Middleman `4.6.3`
 - Main content: `source/posts`
 - Generated output: `build/`
 - Deploy target: Amazon S3 bucket `blog.takuyan.com`
@@ -53,13 +53,13 @@ Notes:
 - If local server fails, confirm baseline execution first:
 
 ```bash
-bundle _2.7.2_ exec middleman build
+bundle _2.7.2_ exec middleman build --bail
 ```
 
 ## Build
 
 ```bash
-bundle _2.7.2_ exec middleman build
+bundle _2.7.2_ exec middleman build --bail
 ```
 
 Build artifacts are generated in `build/`.
@@ -83,6 +83,72 @@ Prerequisites:
   - Use `bundle _2.7.2_ ...` explicitly
 - `s3_sync` permission errors
   - Re-check IAM policy for bucket and object operations
+
+## Dependency maintenance
+
+Dependabot checks Ruby dependencies and GitHub Actions weekly. CI runs
+`bundler-audit check --update` without an ignore list, builds with `--bail`, checks
+public artifacts, and exercises desktop/mobile behavior in the runner's Chrome.
+
+The 2026-11-01 security refresh updates the locked vulnerable dependencies:
+
+| Dependency | Before | After |
+| --- | --- | --- |
+| ActiveSupport | 6.1.7.10 | 7.2.4 |
+| Addressable | 2.8.8 | 2.9.2 |
+| bootstrap-sass | 3.3.7 | 3.4.1 |
+| concurrent-ruby | 1.3.6 | 1.3.8 |
+| Crass | 1.0.6 | 1.0.8 |
+| ERB | 6.0.1 | 6.0.7 |
+| Nokogiri | 1.19.1 | 1.19.4 |
+| Rack | 2.2.22 | 3.1.23 |
+| Redcarpet | 3.4.0 | 3.6.1 |
+| Sanitize | 7.0.0 | 7.0.1 |
+
+Middleman 4.6.3 and Sprockets 4.2.2 allow the supported dependencies. A CSS
+manifest compiles the existing Sass styles through Sprockets 4. Bootstrap's CSS
+is retained, but **no Bootstrap JavaScript or jQuery is served**. The small native
+navigation handler preserves mobile open/close behavior and updates ARIA state.
+The error-page URL suggestion uses DOM properties instead of inserting a URL as
+HTML. This removes the unused Bootstrap button, tooltip, and popover components
+covered by [CVE-2024-6485](https://github.com/advisories/GHSA-vxmc-5x29-h64v) and
+[CVE-2025-1647](https://github.com/advisories/GHSA-q58r-hwc8-rm9j).
+
+`source/posts/drafts/**` is excluded from the sitemap and public build. Do not
+upload source directories or local preview output. CI verifies draft paths and
+references are absent before saving screenshots of public pages only; it never
+uploads the complete build or source tree.
+
+### Reproduce verification
+
+```bash
+bundle _2.7.2_ exec bundler-audit check --update
+bundle _2.7.2_ exec middleman build --bail
+bundle _2.7.2_ exec ruby script/verify-build
+node script/verify-browser.mjs
+```
+
+Browser verification needs Node 22 and Chrome (set `CHROME_BIN` to an existing
+browser executable outside Linux). CI supplies these runtimes. Checks cover the
+home, a post, about and error pages; mobile menu open/close and ARIA state;
+desktop navigation; horizontal overflow; and legacy `/blog/` URL suggestions.
+Screenshots are saved in `output/playwright/`.
+
+The artifact check verifies main outputs, compiled CSS, navigation/pagination
+links, valid feed entries, byte-identical gzip decompression, absence of legacy
+JavaScript and drafts, and a live download/SRI comparison for the pinned Font
+Awesome stylesheet. Existing social widgets are mutable service endpoints and
+cannot use a fixed SRI hash; their direct asset URLs use HTTPS.
+
+For a future staged update, run `bash script/update-dependencies`. It uses the
+current Gemfile constraints, installs gems under `vendor/bundle`, and promotes
+Gemfile/lockfile only after the same audit, build, artifact, and browser checks
+pass. It does not deploy or copy `.env` into the validation directory.
+
+Remaining legacy content-link/asset issues and validation results are recorded
+in PR #70. Bootstrap 3 CSS remains end-of-life; this change removes its JavaScript
+runtime exposure rather than redesigning the site. Third-party analytics/social
+services retain their existing behavior. No article or draft content is changed.
 
 ## Request
 

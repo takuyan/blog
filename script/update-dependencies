@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Resolve and validate in a temporary project. Keep the working bundle unchanged
+# until both the vulnerability audit and site build pass.
+repo_dir="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$repo_dir"
+export RBENV_VERSION="$(cat .ruby-version)"
+rbenv exec ruby -v
+rbenv exec bundle _2.7.2_ --version
+
+stage_dir="$(mktemp -d "${TMPDIR:-/tmp}/blog-dependencies.XXXXXX")"
+on_exit() {
+  result=$?
+  if [ "$result" -ne 0 ]; then
+    printf '\nUpdate stopped. The project Gemfile and lockfile were not replaced.\n' >&2
+  fi
+  printf 'Validation files and logs: %s\n' "$stage_dir"
+}
+trap on_exit EXIT
+
+cp -p Gemfile "$stage_dir/Gemfile.before"
+cp -p Gemfile.lock "$stage_dir/Gemfile.lock.before"
+cp -p Gemfile.lock "$stage_dir/Gemfile.lock"
+cp -p .ruby-version config.rb "$stage_dir/"
+cp -pR source "$stage_dir/source"
+
+cp -p Gemfile "$stage_dir/Gemfile"
+mkdir "$stage_dir/script"
+cp -p script/verify-build script/verify-browser.mjs "$stage_dir/script/"
+
+export BUNDLE_GEMFILE="$stage_dir/Gemfile"
+export BUNDLE_PATH="$repo_dir/vendor/bundle"
+export BUNDLE_FROZEN=false
+export BUNDLE_DEPLOYMENT=false
+cd "$stage_dir"
+
+# Retain complete diagnostics even when dependency resolution fails.
+rbenv exec bundle _2.7.2_ update 2>&1 | tee "$stage_dir/update.log"
+rbenv exec bundle _2.7.2_ exec bundler-audit check --update 2>&1 | tee "$stage_dir/audit.log"
+MIDDLEMAN_DISABLE_LIVERELOAD=1 rbenv exec bundle _2.7.2_ exec middleman build --bail 2>&1 | tee "$stage_dir/build.log"
+
+# Apply the same public-output and browser checks as CI before promotion.
+rbenv exec bundle _2.7.2_ exec ruby script/verify-build
+node script/verify-browser.mjs
+
+# Do not overwrite changes made while dependency installation was running.
+cmp -s "$repo_dir/Gemfile" "$stage_dir/Gemfile.before"
+cmp -s "$repo_dir/Gemfile.lock" "$stage_dir/Gemfile.lock.before"
+cp "$stage_dir/Gemfile" "$repo_dir/Gemfile"
+cp "$stage_dir/Gemfile.lock" "$repo_dir/Gemfile.lock"
+printf '\nGemfile and Gemfile.lock updated after audit and build passed.\n'
+printf 'Review their diff and browser behavior before deploying. No deployment was run.\n'

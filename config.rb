@@ -49,6 +49,9 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
+# Drafts must never enter the public sitemap or build output.
+ignore 'posts/drafts/**'
+
 page '/feed.xml', layout: false
 page '/about'
 page '/error.html', directory_index: false
