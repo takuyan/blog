@@ -28,6 +28,9 @@ html_paths.each do |path|
     url = node['src'] || node['href']
     next unless url.start_with?('http', '//')
     abort "Insecure asset: #{url}" unless url.start_with?('https://')
+    # This existing social widget is a mutable service endpoint, not a
+    # versioned CDN library. Its provider does not publish immutable SRI assets.
+    next if url == 'https://b.st-hatena.com/js/bookmark_button.js'
     abort "Missing SRI: #{url}" unless node['integrity'] && node['crossorigin'] == 'anonymous'
     cdn[url] = node['integrity']
   end

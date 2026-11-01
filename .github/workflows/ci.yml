@@ -38,3 +38,12 @@ jobs:
 
       - name: Verify desktop and mobile behavior
         run: node script/verify-browser.mjs
+
+      # Only screenshots of validated public pages; never upload build/ or sources.
+      - name: Preserve browser verification screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-page-screenshots
+          path: output/playwright/*.png
+          if-no-files-found: error
+          retention-days: 7

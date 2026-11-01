@@ -1,7 +1,7 @@
 // Use the Chrome and Node runtimes already present on the GitHub runner.
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
-import { readFile, stat, mkdtemp, rm } from 'node:fs/promises';
+import { readFile, stat, mkdtemp, rm, mkdir, writeFile } from 'node:fs/promises';
 import { resolve, extname, join } from 'node:path';
 import { tmpdir } from 'node:os';
 import assert from 'node:assert/strict';
@@ -39,6 +39,8 @@ try {
   const call = (method, params = {}) => new Promise((resolve, reject) => { const requestId = ++id; const timer = setTimeout(() => reject(new Error(`CDP timeout: ${method}`)), 15000); pending.set(requestId, { resolve, reject, timer }); socket.send(JSON.stringify({ id: requestId, method, params })); });
   const evaluate = async expression => { const r = await call('Runtime.evaluate', { expression, returnByValue: true }); if (r.exceptionDetails) throw new Error(JSON.stringify(r.exceptionDetails)); return r.result.value; };
   await call('Page.enable');
+  await mkdir('output/playwright', { recursive: true });
+  const screenshot = async name => { const result = await call('Page.captureScreenshot', { format: 'png' }); await writeFile(`output/playwright/${name}.png`, Buffer.from(result.data, 'base64')); };
   const visit = async path => {
     await call('Page.navigate', { url: base + path });
     for (let i = 0; i < 100; i++) {
@@ -56,11 +58,13 @@ try {
   assert.equal(await visible('#site-navigation'), true);
   assert.equal(await evaluate(`document.querySelector('.navbar-toggle').getAttribute('aria-expanded')`), 'true');
   assert.equal(await evaluate(`document.documentElement.scrollWidth <= innerWidth`), true, 'Mobile horizontal overflow');
+  await screenshot('mobile-navigation');
   await evaluate(`document.querySelector('.navbar-toggle').click()`);
   assert.equal(await visible('#site-navigation'), false);
   await call('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
   assert.equal(await visible('#site-navigation'), true);
   assert.equal(await visible('.navbar-toggle'), false);
+  await screenshot('desktop-home');
   const post = await evaluate(`Array.from(document.querySelectorAll('a[href]')).map(a => a.getAttribute('href')).find(h => /^\/posts\/\d/.test(h))`);
   assert.ok(post, 'Homepage post link');
   await visit(post);
