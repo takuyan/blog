@@ -51,6 +51,7 @@ try {
   };
   await call('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
   await visit('/');
+  assert.equal(await evaluate(String.raw`/[\u3040-\u30ff\u4e00-\u9fff]/.test(document.querySelector('.article_title').textContent)`), true, 'Japanese title text survives rendering');
   const visible = selector => evaluate(`!!document.querySelector(${JSON.stringify(selector)}) && document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect().height > 0`);
   assert.equal(await visible('.navbar-toggle'), true);
   assert.equal(await visible('#site-navigation'), false);

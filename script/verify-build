@@ -21,6 +21,7 @@ missing = []
 cdn = {}
 html_paths.each do |path|
   text = File.read(path)
+  abort "Invalid UTF-8 output: #{path}" unless text.valid_encoding?
   abort 'Draft reference detected' if text.include?('/posts/drafts/') || drafts.any? { |name| text.include?(name) }
   doc = Nokogiri::HTML(text)
   abort "Legacy JS included: #{path}" if doc.css('script[src]').any? { |s| s['src'].match?(/jquery|bootstrap/i) }
