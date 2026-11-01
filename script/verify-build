@@ -52,6 +52,9 @@ html_paths.each do |path|
     abort "Broken navigation in #{path}" unless target.file?
   end
 end
+Dir['build/**/*.js'].each do |path|
+  abort "Legacy library bundled: #{path}" if File.read(path).match?(/Bootstrap v|jQuery JavaScript Library/)
+end
 feed = Nokogiri::XML(File.read('build/feed.xml')) { |c| c.strict }
 abort 'Empty feed' if feed.xpath('//*[local-name()="entry"]').empty?
 Dir['build/**/*.gz'].each do |path|
