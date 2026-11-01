@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Resolve and validate in a temporary project. Keep the working bundle unchanged
+# until both the vulnerability audit and site build pass.
+repo_dir="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$repo_dir"
+export RBENV_VERSION="$(cat .ruby-version)"
+rbenv exec ruby -v
+rbenv exec bundle _2.7.2_ --version
+
+stage_dir="$(mktemp -d "${TMPDIR:-/tmp}/blog-dependencies.XXXXXX")"
+on_exit() {
+  result=$?
+  if [ "$result" -ne 0 ]; then
+    printf '\nUpdate stopped. The project Gemfile and lockfile were not replaced.\n' >&2
+  fi
+  printf 'Validation files and logs: %s\n' "$stage_dir"
+}
+trap on_exit EXIT
+
+cp -p Gemfile "$stage_dir/Gemfile.before"
+cp -p Gemfile.lock "$stage_dir/Gemfile.lock.before"
+cp -p Gemfile.lock "$stage_dir/Gemfile.lock"
+cp -p .ruby-version config.rb "$stage_dir/"
+cp -pR source "$stage_dir/source"
+
+rbenv exec ruby - "$stage_dir" <<'RUBY'
+stage = ARGV.fetch(0)
+gemfile = File.read(File.join(stage, 'Gemfile.before'))
+replacements = {
+  'middleman' => "gem 'middleman', '~> 4.6.3'",
+  'sprockets' => "gem 'sprockets', '~> 4.2.2'",
+  'bootstrap-sass' => "gem 'bootstrap-sass', '~> 3.4.1', require: false",
+  'redcarpet' => "gem 'redcarpet', '~> 3.6.1'",
+  'nokogiri' => "gem 'nokogiri', '~> 1.19', '>= 1.19.4'"
+}
+replacements.each do |name, line|
+  abort "Expected one declaration of #{name}" unless gemfile.scan(/^gem '#{Regexp.escape(name)}'(?:,.*)?$/).size == 1
+  gemfile.sub!(/^gem '#{Regexp.escape(name)}'(?:,.*)?$/, line)
+end
+# Middleman 4.4 prevented updating ActiveSupport beyond its unsupported 6.1 line.
+# Stay on the supported 7.2 series to limit migration scope.
+unless gemfile.match?(/^gem ['"]activesupport['"](?:,|$)/)
+  gemfile << "\ngem 'activesupport', '~> 7.2', '>= 7.2.3.1'\n"
+end
+unless gemfile.match?(/^gem ['"]bundler-audit['"](?:,|$)/)
+  gemfile << "gem 'bundler-audit', require: false\n"
+end
+File.write(File.join(stage, 'Gemfile'), gemfile)
+RUBY
+
+export BUNDLE_GEMFILE="$stage_dir/Gemfile"
+export BUNDLE_PATH="$repo_dir/vendor/bundle"
+export BUNDLE_FROZEN=false
+export BUNDLE_DEPLOYMENT=false
+cd "$stage_dir"
+
+# Retain complete diagnostics even when dependency resolution fails.
+rbenv exec bundle _2.7.2_ update 2>&1 | tee "$stage_dir/update.log"
+rbenv exec bundle _2.7.2_ exec bundler-audit check --update 2>&1 | tee "$stage_dir/audit.log"
+MIDDLEMAN_DISABLE_LIVERELOAD=1 rbenv exec bundle _2.7.2_ exec middleman build --bail 2>&1 | tee "$stage_dir/build.log"
+
+# Catch missing primary outputs and corrupt compressed assets before promotion.
+rbenv exec bundle _2.7.2_ exec ruby -rzlib -e '
+  %w[index.html about/index.html error.html feed.xml stylesheets/application.css javascripts/application.js].each do |name|
+    abort "Missing output: #{name}" unless File.file?("build/#{name}")
+  end
+  Dir["build/**/*.gz"].each do |path|
+    actual = Zlib::GzipReader.open(path, &:read)
+    abort "Invalid gzip output: #{path}" unless actual == File.binread(path.delete_suffix(".gz"))
+  end
+  puts "Primary outputs and gzip contents: OK"
+'
+
+# Do not overwrite changes made while dependency installation was running.
+cmp -s "$repo_dir/Gemfile" "$stage_dir/Gemfile.before"
+cmp -s "$repo_dir/Gemfile.lock" "$stage_dir/Gemfile.lock.before"
+cp "$stage_dir/Gemfile" "$repo_dir/Gemfile"
+cp "$stage_dir/Gemfile.lock" "$repo_dir/Gemfile.lock"
+printf '\nGemfile and Gemfile.lock updated after audit and build passed.\n'
+printf 'Review their diff and browser behavior before deploying. No deployment was run.\n'
