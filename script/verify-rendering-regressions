@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+require 'middleman-core'
+Bundler.require
+require_relative 'lib/html_structure'
+
+app = Middleman::Application.new { set :environment, :build }
+context = app.template_context_class.new(app)
+template = Tilt.new('capture-regression.html.erb', 1, outvar: '@_out_buf') do
+  '<% content_for :title do %>TITLE<% end %>BODY'
+end
+abort 'Wrong renderer for compound extension' unless template.is_a?(Middleman::Renderers::ERb::Template)
+abort 'Content block leaked into body' unless template.render(context) == 'BODY'
+context.instance_variable_set(:@_out_buf, 'LAYOUT')
+abort 'Capture included layout' unless context.yield_content(:title) == 'TITLE'
+abort 'Capture changed layout buffer' unless context.instance_variable_get(:@_out_buf) == 'LAYOUT'
+
+# Prove the artifact verifier rejects the observed failure and related cases,
+# including valid HTML with duplicated navigation or body sections.
+path = 'build/about/index.html'
+html = File.read(path)
+HtmlStructure.verify!(html, path)
+doc = Nokogiri::HTML(html)
+mutations = { 'nested document' => html.sub('</h1>', "#{html}</h1>") }
+%w[html head body].each do |tag|
+  mutations["duplicate #{tag}"] = html.sub("</#{tag}>", "<#{tag}></#{tag}></#{tag}>")
+end
+mutations['duplicate doctype'] = "<!doctype html>#{html}"
+mutations['duplicate navigation'] = html.sub('</body>', "#{doc.at_css('.navbar').to_html}</body>")
+mutations['duplicate body section'] = html.sub('</body>', '<h2>Personal Projects</h2></body>')
+mutations['wrong header'] = html.sub(/(<h1>).*?(<\/h1>)/m, '\1Incorrect\2')
+mutations.each do |name, broken|
+  begin
+    HtmlStructure.verify!(broken, path)
+  rescue RuntimeError
+    next
+  end
+  abort "Verifier accepted #{name}"
+end
+puts "Rendering regression checks passed: isolated capture and #{mutations.length} rejected mutations."
