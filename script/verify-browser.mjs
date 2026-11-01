@@ -57,8 +57,9 @@ try {
   await evaluate(`document.querySelector('.navbar-toggle').click()`);
   assert.equal(await visible('#site-navigation'), true);
   assert.equal(await evaluate(`document.querySelector('.navbar-toggle').getAttribute('aria-expanded')`), 'true');
-  assert.equal(await evaluate(`document.documentElement.scrollWidth <= innerWidth`), true, 'Mobile horizontal overflow');
   await screenshot('mobile-navigation');
+  console.log('Mobile layout:', await evaluate(`({width: innerWidth, scrollWidth: document.documentElement.scrollWidth, overflow: Array.from(document.querySelectorAll('body *')).filter(e => e.getBoundingClientRect().right > innerWidth).slice(0, 15).map(e => ({tag: e.tagName, cls: e.className, width: e.getBoundingClientRect().width, right: e.getBoundingClientRect().right}))})`));
+  assert.equal(await evaluate(`document.documentElement.scrollWidth <= innerWidth`), true, 'Mobile horizontal overflow');
   await evaluate(`document.querySelector('.navbar-toggle').click()`);
   assert.equal(await visible('#site-navigation'), false);
   await call('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
