@@ -44,7 +44,7 @@ try {
   const visit = async path => {
     await call('Page.navigate', { url: base + path });
     for (let i = 0; i < 100; i++) {
-      if (await evaluate(`location.pathname === ${JSON.stringify(path)} && document.readyState === 'complete'`)) return;
+      if (await evaluate(`location.pathname === ${JSON.stringify(path)} && document.readyState !== 'loading'`)) return;
       await new Promise(r => setTimeout(r, 100));
     }
     throw new Error('Page load timeout');
@@ -82,5 +82,5 @@ try {
   chrome.kill();
   await new Promise(r => server.close(r));
   await new Promise(r => chrome.exitCode !== null ? r() : chrome.once('exit', r));
-  await rm(profile, { recursive: true, force: true });
+  await rm(profile, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 });
 }

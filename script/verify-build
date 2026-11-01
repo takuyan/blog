@@ -65,4 +65,13 @@ cdn.each do |url, integrity|
   abort "SRI mismatch: #{url}" unless actual == expected
 end
 puts "Public artifact checks passed: #{html_paths.length} HTML pages, #{Dir['build/**/*.gz'].length} gzip files, #{cdn.length} CDN integrity checks."
+# Historical article URLs are pre-existing content defects; fail on any new one.
+known_missing = %w[
+  blog/2012/09/28/smart-error
+  blog/2013/01/09/main-business-summary-of-2012
+  blog/2013/01/09/personal-business-summary-of-2012
+  blog/2013/01/09/summary-of-2012
+]
+new_missing = missing.uniq - known_missing
+abort "New broken local targets: #{new_missing.inspect}" unless new_missing.empty?
 puts "Existing content/asset missing targets: #{missing.uniq.sort.inspect}"
