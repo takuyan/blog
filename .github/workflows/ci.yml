@@ -46,7 +46,7 @@ jobs:
       # Only screenshots of validated public pages; never upload build/ or sources.
       - name: Preserve browser verification screenshots
         if: ${{ !cancelled() && steps.public-artifacts.outcome == 'success' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: public-page-screenshots
           path: output/playwright/*.png
