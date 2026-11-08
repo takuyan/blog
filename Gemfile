@@ -11,13 +11,13 @@ gem 'benchmark'
 gem 'csv'
 gem 'rdoc'
 gem 'thor', '>= 1.3', '< 2.0'
-gem 'haml', '~> 5.2.2'
+gem 'haml', '~> 6.4.0'
 gem 'middleman', '~> 4.6.3'
 gem 'middleman-blog'
 gem 'middleman-livereload'
 gem 'middleman-s3_sync'
 gem 'middleman-sprockets'
-gem 'sprockets', '~> 4.2.2'
+gem 'sprockets', '~> 4.4.1'
 gem 'mime-types'
 gem 'dotenv'
 gem 'nokogiri'
@@ -33,5 +33,5 @@ gem 'bootstrap-sass', '~> 3.4.1', require: false
 # For feed.xml.builder
 gem 'builder'
 
-gem 'activesupport', '~> 7.2', '>= 7.2.3.1'
+gem 'activesupport', '~> 8.1'
 gem 'bundler-audit', require: false
