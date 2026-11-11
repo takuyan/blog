@@ -33,5 +33,5 @@ gem 'bootstrap-sass', '~> 3.4.1', require: false
 # For feed.xml.builder
 gem 'builder'
 
-gem 'activesupport', '~> 7.2', '>= 7.2.3.1'
+gem 'activesupport', '~> 8.0'
 gem 'bundler-audit', require: false
