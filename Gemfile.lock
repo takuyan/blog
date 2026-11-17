@@ -1,18 +1,19 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.2.4)
+    activesupport (8.0.5.2)
       base64
       benchmark (>= 0.3)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.3.1)
-      connection_pool (>= 2.2.5, < 3)
+      connection_pool (>= 2.2.5)
       drb
       i18n (>= 1.6, < 2)
       logger (>= 1.4.2)
-      minitest (>= 5.1, < 6)
+      minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
+      uri (>= 0.13.1)
     addressable (2.9.2)
       public_suffix (>= 2.0.2, < 8.0)
     ansi (1.6.0)
@@ -174,24 +175,24 @@ GEM
     mini_portile2 (2.8.9)
     minitest (5.27.0)
     mutex_m (0.3.0)
-    nokogiri (1.19.4)
+    nokogiri (1.19.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.19.4-aarch64-linux-gnu)
+    nokogiri (1.19.7-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.4-aarch64-linux-musl)
+    nokogiri (1.19.7-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.19.4-arm-linux-gnu)
+    nokogiri (1.19.7-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.4-arm-linux-musl)
+    nokogiri (1.19.7-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.19.4-arm64-darwin)
+    nokogiri (1.19.7-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.4-x86_64-darwin)
+    nokogiri (1.19.7-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.4-x86_64-linux-gnu)
+    nokogiri (1.19.7-x86_64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.4-x86_64-linux-musl)
+    nokogiri (1.19.7-x86_64-linux-musl)
       racc (~> 1.4)
     ostruct (0.6.3)
     padrino-helpers (0.16.2)
@@ -242,9 +243,9 @@ GEM
     rexml (3.4.4)
     rouge (4.7.0)
     ruby-progressbar (1.13.0)
-    sanitize (7.0.1)
+    sanitize (7.0.2)
       crass (~> 1.0.8)
-      nokogiri (>= 1.16.8)
+      nokogiri (>= 1.19.7)
     sassc (2.4.0)
       ffi (~> 1.9)
     securerandom (0.4.1)
@@ -263,6 +264,7 @@ GEM
       concurrent-ruby (~> 1.0)
     uglifier (4.2.1)
       execjs (>= 0.3.0, < 3)
+    uri (1.1.2)
     webrick (1.9.2)
 
 PLATFORMS
@@ -279,7 +281,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  activesupport (~> 7.2, >= 7.2.3.1)
+  activesupport (~> 8.0.5, >= 8.0.5.2)
   benchmark
   bootstrap-sass (~> 3.4.1)
   bourbon
@@ -298,12 +300,12 @@ DEPENDENCIES
   middleman-syntax
   mime-types
   mutex_m
-  nokogiri
+  nokogiri (>= 1.19.7)
   ostruct
   pry-byebug
   rdoc
   redcarpet (~> 3.6.1)
-  sanitize
+  sanitize (>= 7.0.2)
   sprockets (~> 4.2.2)
   thor (>= 1.3, < 2.0)
 
