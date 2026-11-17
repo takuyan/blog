@@ -20,10 +20,10 @@ gem 'middleman-sprockets'
 gem 'sprockets', '~> 4.2.2'
 gem 'mime-types'
 gem 'dotenv'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.19.7'
 gem 'bourbon', require: false
 gem 'redcarpet', '~> 3.6.1'
-gem 'sanitize'
+gem 'sanitize', '>= 7.0.2'
 gem 'middleman-syntax'
 gem 'coffee-script'
 gem 'pry-byebug'
@@ -33,5 +33,5 @@ gem 'bootstrap-sass', '~> 3.4.1', require: false
 # For feed.xml.builder
 gem 'builder'
 
-gem 'activesupport', '~> 7.2', '>= 7.2.3.1'
+gem 'activesupport', '~> 8.0.5', '>= 8.0.5.2'
 gem 'bundler-audit', require: false

@@ -90,6 +90,14 @@ Dependabot checks Ruby dependencies and GitHub Actions weekly. CI runs
 `bundler-audit check --update` without an ignore list, builds with `--bail`, checks
 public artifacts, and exercises desktop/mobile behavior in the runner's Chrome.
 
+The 2026-11-17 security update combines the ActiveSupport and Nokogiri fixes
+from Dependabot PRs #76 and #77. ActiveSupport is now 8.0.5.2, with its required
+`uri` dependency. The current audit also requires Sanitize 7.0.2, which in turn
+requires Nokogiri 1.19.7 or newer; the lockfile uses 1.19.7. `connection_pool`
+2.5.5 and `minitest` 5.27.0 remain unchanged. The Gemfile records these security
+floors and keeps ActiveSupport on the 8.0 release line. No article or draft
+content is changed.
+
 The 2026-11-01 security refresh updates the locked vulnerable dependencies:
 
 | Dependency | Before | After |
